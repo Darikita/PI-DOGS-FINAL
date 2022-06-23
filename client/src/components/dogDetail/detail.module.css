@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Sarpanch&display=swap');
+ .fill {
+    font-family: 'Sarpanch', sans-serif;
+    font-size: 15px;
+    font-weight: 200;
+    letter-spacing: 1px;
+    padding: 8px 50px 8px;
+    outline: 0;
+    border: 1px solid black;
+    cursor: pointer;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+  }
+  
+  .fill::after {
+    content: "";
+    background-color:hsl(30, 64%, 63%); 
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    top: 7px;
+    left: 7px;
+    transition: 0.2s;
+  }
+  
+  .fill:hover::after {
+    top: 0px;
+    left: 0px;
+  }
+  .name {
+    font-family: 'Sarpanch', sans-serif;
+    margin-top: 40px ;
+    font-size: 50px;
+  }
+
+  .byna{
+    align-items: center;
+    display: flex;
+    flex-direction:column;
+  } 
+  img {
+    max-width: 100%;
+   /*  display: block; */
+}
+
+.post{
+   margin-top: 10px;
+    display:flex;
+    flex-direction: column;
+    width:100%;
+    max-width: 400px;
+    background: #F6D6BC;
+    background: -moz-linear-gradient(45deg, #F6D6BC 0%, #F6D6BC 50%, #E0A06B 100%);
+    background: -webkit-linear-gradient(45deg, #F6D6BC 0%, #F6D6BC 50%, #E0A06B 100%);
+    border-radius: 10px;
+    box-shadow: 0 14px 24px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    padding: .65rem;
+   
+}
+ .pic2 {
+     width:380px;
+     height: 300px;
+     border: 5px solid hsl(30, 64%, 63%);
+    margin-left: 5px;
+    padding-bottom: 0px;
+   
+ }
+ .title {
+    font-family: 'Sarpanch', sans-serif;
+    font-size: 17px;
+ }
+ .title1 {
+    font-family: 'Sarpanch', sans-serif;
+    font-size: 17px;
+    margin-left: 97px;
+ }
+ .ti {
+    font-family: 'Sarpanch', sans-serif;
+    font-size: 14px;
+  
+ }
+ .cont {
+     display: flex;
+     flex-direction: row;
+   position: relative;
+   justify-content: space-around;
+ }
+ .title2 {
+    font-family: 'Sarpanch', sans-serif;
+    font-size: 17px;
+    margin-left: 130px;
+ }
+ .title3 {
+    font-family: 'Sarpanch', sans-serif;
+    font-size: 16px;
+    margin-right: 15px;
+ 
+ }
+ .ti2{
+     list-style:none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;  
+  margin-right: 30px;
+ }

@@ -1,13 +1,22 @@
 body {
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale; 
+    background-color: white
+/* background-image: url("https://vidaconmascotas.com/wp-content/uploads/2021/03/%C2%BFCuantas-razas-de-perros-existen-en-el-mundo-Todos-los.jpg");  
+  opacity: 0.90; */ 
+  /* background-repeat: repeat-y;
+  background-attachment: scroll;
+ background-position: 50% 50%;  */
+  /*background-attachment: local;
+   rgb(238, 234, 231); */
+
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    monospace;  
+
 }
