@@ -85,7 +85,7 @@ router.get('/dogs', async (req,res) => {
   let dogTotal = await getAllDogs ();
   if (name){
       let dogName = await dogTotal.filter(el => 
-          el.name.toLowerCase().includes(name.toLowerCase()))
+      el.name.toLowerCase().includes(name.toLowerCase()))
       dogName.length ? 
       res.status(200).send(dogName) :
       res.status(404).send('Doggie not found!');
@@ -103,7 +103,7 @@ router.get('/dogs/:id', async (req,res) => {
     let dogId = await dogsTotal.filter(el => el.id == id)
     dogId.length? 
     res.status(200).json(dogId):
-    res.status(404).send('Doggie not found!')
+    res.status(404).send('Doggi not found!')
   }
 })
 ////----------------------------------POST-------------------------------
@@ -124,7 +124,7 @@ router.get('/dogs/:id', async (req,res) => {
 //   }
 // });
 router.post("/dog", async function (req, res,){
-    const {name, height, weight, life_span, image, temperament,  userCreated} = req.body;
+    const {name, height, weight, life_span, image, temperament, userCreated} = req.body;
     const newDog = await Dog.create({
       name,
       height,
@@ -133,14 +133,12 @@ router.post("/dog", async function (req, res,){
       image,
       userCreated
     });
-
     let temperamentOnDb = await Temperament.findAll({
       where: {
         name: temperament
       }})
-
-   newDog.addTemperament(temperamentOnDb)
-    res.send('Dog created Succesfully!!')
+    newDog.addTemperament(temperamentOnDb)
+    res.send('Doggi created Successfully!!')
   
 });
 module.exports = router;

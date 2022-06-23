@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {Provider} from "react-redux";
-import {store} from "./store";
+import {store} from './Redux/store';
 import axios from 'axios';
 import dotenv from "dotenv";
 
