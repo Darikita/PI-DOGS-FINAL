@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchDogs, fetchTemperaments } from "../../store/actions";
+import { fetchDogs, fetchTemperaments } from "../../Redux/actions";
 import Dog from "../Dog/Dog";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 import styles from "./Dogs.module.css";
@@ -81,7 +81,7 @@ export default function Dogs() {
         <input
           className={styles.input}
           id="paginadoNumerico"
-          placeholder="Pag."
+          placeholder="Page"
           type="number"
           min="1"
           max={maxPages}

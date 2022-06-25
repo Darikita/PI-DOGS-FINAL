@@ -33,7 +33,6 @@ export default function DogDetail() {
   return (
     <div className={styles.padre}>
       <NavBar />
-
       <div className={styles.card}>
         {dog ? (
           <>
@@ -48,40 +47,38 @@ export default function DogDetail() {
               <div className={styles.tt}>
                 <h1>{dog["0"]["name"]}</h1>
                 <br />
-
                 {dog["0"]["heightMin"] &&
                 dog["0"]["heightMax"] &&
                 !dog["0"]["height"] ? (
-                  <h4>
+                  <h5>
                     Altura:{" "}
                     {`${dog["0"]["heightMin"]} - ${dog["0"]["heightMax"]}`} cm.
-                  </h4>
+                  </h5>
                 ) : (
-                  <h4>Altura: {dog["0"]["height"]} cm.</h4>
+                  <h5>Altura: {dog["0"]["height"]} cm.</h5>
                 )}
-
                 {dog["0"]["weightMin"] &&
                 dog["0"]["weightMax"] &&
                 !dog["0"]["weight"] ? (
-                  <h4>
+                  <h5>
                     Peso:{" "}
                     {`${dog["0"]["weightMin"]} - ${dog["0"]["weightMax"]}`} kg.
-                  </h4>
+                  </h5>
                 ) : (
-                  <h4>Peso: {dog["0"]["weight"]} kg.</h4>
+                  <h5>Peso: {dog["0"]["weight"]} kg.</h5>
                 )}
                 {dog["0"]["lifeSpanMin"] &&
                 dog["0"]["lifeSpanMax"] &&
                 !dog["0"]["lifeSpan"] ? (
-                  <h4>
+                  <h5>
                     Vda Aproximada:{" "}
                     {`${dog["0"]["lifeSpanMin"]} a ${dog["0"]["lifeSpanMax"]}`}{" "}
                     años.
-                  </h4>
+                  </h5>
                 ) : (
-                  <h4>Vida Aproximada: {dog["0"]["lifeSpan"]}</h4>
+                  <h5>Vida Aproximada: {dog["0"]["lifeSpan"]}</h5>
                 )}
-                <h4>Temperamentos: {dog["0"]["temperament"].join(", ")}.</h4>
+                <h5>Temperamentos: {dog["0"]["temperament"].join(", ")}.</h5>
               </div>
             </div>
           </>

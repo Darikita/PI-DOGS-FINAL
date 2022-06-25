@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { filterxTemperaments } from "../../store/actions";
+import { filterxTemperaments } from "../../Redux/actions";
 import styles from "./Filter.Module.css";
 
 export default function Filter() {

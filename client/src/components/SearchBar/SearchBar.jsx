@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { searchDogs } from "../../store/actions";
+import { searchDogs } from "../../Redux/actions";
 import styles from "./SearchBar.module.css";
 
 

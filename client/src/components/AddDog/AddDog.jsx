@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 
-import { fetchTemperaments } from "../../store/actions";
+import { fetchTemperaments } from "../../Redux/actions";
 import NavBar from "../NavBar/NavBar";
 import styles from "./AddDog.module.css";
 

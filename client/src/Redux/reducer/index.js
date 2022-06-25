@@ -6,7 +6,7 @@ import {
   SEARCH_DOGS,
   SORT,
   SORT_WEIGHT,
-} from "../actions";
+} from "../../Redux/actions";
 
 const initialState = {
   dogs: [],

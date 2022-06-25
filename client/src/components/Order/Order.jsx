@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { ASCENDENTE, DESCENDENTE } from "../../constantes/sort";
-import { sort, sort_weight } from "../../store/actions";
+import { sort, sort_weight } from "../../Redux/actions";
 import styles from "./Order.Module.css";
 
 export default function Order() {

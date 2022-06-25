@@ -2,40 +2,46 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: "Merriweather Sans", sans-serif;
+  justify-content: space-around;
 }
 
 .detail {
   display: flex;
   align-items: center;
+  flex-direction: column;
 }
 .tt {
-  background: rgba(247, 239, 239, 0.3);
-  backdrop-filter: blur(20px);
+  margin-top: -35%;
+  FONT-WEIGHT: 800;
+  FONT-WEIGHT: 800;
+  FONT-VARIANT: JIS78;
+  FONT-VARIANT: JIS78;
+  float: right;
+  background: rgba(255, 254, 254, 0.217);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgb(0, 0, 0);
-  box-shadow: inset 5px 5px 10px #000000, inset -5px -5px 10px #000000;
-  padding: 10px;
-  margin: 10px;
-  border-radius: 10px;
+  backdrop-filter: blur(20px);
+  border-radius: 12px;
+  padding: 15px;
 }
 .imagen {
-  width: 300px;
-  height: 150px;
   object-fit: contain;
+  display: flex;
+  width: 520px;
+  height: 510px;
+  border-radius: 20px;
+  object-fit: cover;
 }
 
 .card {
+  margin-top:5%; 
   background: rgba(255, 255, 255, 0.315);
   backdrop-filter: blur(20px);
-  -webkit-box-shadow: 7px 10px 21px 1px rgba(0, 0, 0, 1);
-  -moz-box-shadow: 7px 10px 21px 1px rgba(0, 0, 0, 1);
-  box-shadow: 7px 10px 21px 1px rgba(0, 0, 0, 1);
+  -webkit-box-shadow: 7px 10px 21px 1px rgb(132, 118, 118);
+  -moz-box-shadow: 7px 10px 21px 1px rgb(180, 153, 153);
+  box-shadow: 7px 10px 21px 1px rgb(78, 72, 72);
   border-radius: 20px;
-
-  width: 700px;
-  height: 270px;
-  margin: 20px;
+  width: 500px;
+  height:480px;
   padding: 10px;
   border-radius: 20px;
   display: flex;
@@ -55,7 +61,6 @@
   height: 36px;
   border-radius: 50%;
   border-left-color: #fad000;
-
   animation: spin 1s ease infinite;
 }
 
