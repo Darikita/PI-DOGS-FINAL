@@ -1,0 +1,98 @@
+.padre {
+  font-family: "Merriweather Sans", sans-serif;
+}
+.carDog {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.containerPag {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.countPag {
+  margin-right: 10px;
+}
+
+.botonAnterior {
+  font-family: "Merriweather Sans", sans-serif;
+  font-family: "Oswald", sans-serif;
+  font-size: 15px;
+  min-width: 130px;
+  height: 40px;
+  color: #000;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 50px;
+  border: none;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  background: #fad000;
+  z-index: 1;
+}
+
+.botonAnterior:hover:after {
+  width: 100%;
+  left: 0;
+  border-radius: 50px;
+}
+.botonAnterior:hover {
+  background-color: #ffe566;
+}
+.botonAnterior:active {
+  top: 2px;
+}
+
+.botonSiguiente {
+  font-family: "Merriweather Sans", sans-serif;
+  font-family: "Oswald", sans-serif;
+  font-size: 15px;
+  min-width: 130px;
+  height: 40px;
+  color: #000;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 50px;
+  border: none;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  background: #fad000;
+  z-index: 1;
+}
+
+.botonSiguiente:hover:after {
+  width: 100%;
+  left: 0;
+  border-radius: 50px;
+}
+.botonSiguiente:hover {
+  background-color: #ffe566;
+}
+.botonSiguiente:active {
+  top: 2px;
+}
+
+.input {
+  display: inline-block;
+  padding: 10px 20px 10px 17px;
+  border: 1px solid #b7b7b7;
+  border-radius: 20px 3px;
+  font-family: "Merriweather Sans", sans-serif;
+  font-size: 15px;
+  color: rgb(0, 9, 59);
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.2) inset;
+  margin: 5px;
+}

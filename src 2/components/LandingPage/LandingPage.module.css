@@ -4,9 +4,7 @@
   height: 100vh;
   width: 100%;
   background-size: cover;
-  /* background-image: url("https://wallpaperaccess.com/full/327781.jpg"); */
-  background-image: url("./Landing.png"); 
-  background-image:();
+  background-image: url("https://wallpaperaccess.com/full/327781.jpg");
   overflow: auto;
   display: flex;
   flex-direction: column;
@@ -16,7 +14,7 @@
 }
 .div {
   margin-left: 50%;
-  margin-top: 0;
+  margin-top: -30%;
   display: flex;
   flex-direction: column;
    overflow:hidden;
@@ -26,7 +24,7 @@
 }
 
  h4 {
-font-size:90px;
+font-size:70px;
 margin-bottom: 35px; 
 margin-top: 10px;
  font:bold  'Signika', sans-serif;
@@ -46,8 +44,8 @@ h4 span { display:inline-block ; animation:float .2s ease-in-out infinite; }
   50%{ transform:translateY(-20px) rotate(3deg) scale(1.1);  }
 }
 /* 39, 100, 47 */
-span:nth-child(4n) { color:hsl(28, 75%, 55%); text-shadow:1px 1px hsl(28, 75%, 45%), 2px 2px hsl(39, 45%, 45%), 3px 3px hsl(39, 45%, 45%), 4px 4px hsl(39, 75%, 45%); }
-span:nth-child(4n-1) { color:hsl(5, 35%, 55%); text-shadow:1px 1px hsl(25, 35%, 45%), 2px 2px hsl(5, 35%, 45%), 3px 3px hsl(5, 35%, 45%), 4px 4px hsl(5, 35%, 45%); }
+span:nth-child(4n) { color:hsl(39, 75%, 55%); text-shadow:1px 1px hsl(39, 75%, 45%), 2px 2px hsl(39, 45%, 45%), 3px 3px hsl(39, 45%, 45%), 4px 4px hsl(39, 75%, 45%); }
+span:nth-child(4n-1) { color:hsl(5, 35%, 55%); text-shadow:1px 1px hsl(5, 35%, 45%), 2px 2px hsl(5, 35%, 45%), 3px 3px hsl(5, 35%, 45%), 4px 4px hsl(5, 35%, 45%); }
 span:nth-child(4n-2) { color:hsl(30, 64%, 63%); text-shadow:1px 1px hsl(305, 25%, 50%), 2px 2px hsl(30, 25%, 50%), 3px 3px hsl(30, 25%, 50%), 4px 4px hsl(30, 25%, 50%); }
 span:nth-child(4n-3) { color:hsl(340, 61%, 44%); text-shadow:1px 1px hsl(343, 45%, 50%), 2px 2px hsl(343, 45%, 50%), 3px 3px hsl(343, 45%, 50%), 4px 4px hsl(340, 61%, 44%); }
 
@@ -92,7 +90,7 @@ h4 span:nth-child(14){ animation-delay:.65s; }
 }
 
 .btn:hover {
-  background-color:hsl(30, 64%, 63%);
+  background-color: rgb(255, 255, 255);
   transform: scale(1.1);
   cursor: pointer;
   color:black

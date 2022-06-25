@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Mali:wght@700&family=Ubuntu+Mono&display=swap');
+.name{
+  float:inline-start;
+  font-family: 'Mali', cursive;
+  padding: 15px;
+  font-size:large;
+  background-color: #c1b6bf;
+  margin-left: -10px;
+  margin-right: -10px;
+  color: aliceblue;
+  padding: 10px;
+  border: 20px;
+  text-align: center;
+  overflow: hidden;
+  border-top: 20px;
+}
+
+.imagen {
+  object-fit: contain;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 290px;
+  height: 200px;
+  overflow: hidden;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  object-fit: cover;
+  margin-top: -10px;
+  margin-left: -10px;
+}
+
+.card {
+  -webkit-box-shadow: 7px 10px 21px 1px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 7px 10px 21px 1px rgba(0, 0, 0, 1);
+  box-shadow: 7px 10px 21px 1px rgba(0, 0, 0, 1);
+  border-radius: 20px;
+  width: 270px;
+  height: 330px;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 20px;
+}
+.card:hover {
+  transform: scale(1.1);
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+.card a {
+  text-decoration: none;
+  color: black;
+}
+.contenido{
+  font-family: 'Ubuntu Mono', monospace;
+  font-size:18px;
+  margin-top: 10px;
+}
+

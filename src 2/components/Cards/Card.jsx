@@ -2,7 +2,7 @@ import React from 'react';
 import style from './Card.module.css'
 import {Link} from 'react-router-dom'
 
-function Card ({ name, image, temperament, temperaments, id}) {
+function Card ({ name, image, weight, height, temperaments, id}) {
  return (
     <>
         <div className = {style.card}>
@@ -10,10 +10,13 @@ function Card ({ name, image, temperament, temperaments, id}) {
              <Link to={`/perro/${id}`}>
                  <h3 className ={style.titleName} >{name}</h3>  
              </Link>
+             <h5>Peso:{height} kg.</h5>
              <div className={ style.temp }>                                              
-                    <p>{temperaments.map( elem => elem + ' * ') 
+                    <p>Temperamento:{temperaments.map( elem => elem + ' * ') 
                         }
-                    </p>                
+                    </p> 
+                
+                                           
             </div>  
         </div>
      </>

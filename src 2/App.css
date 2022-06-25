@@ -1,16 +1,7 @@
 .App {
   text-align: center;
-  background-image: radial-gradient(
-    circle at 50% 50%,
-    #ffffff 0,
-    #ffffff 50%,
-    #f6faf9 100%
-  );
 }
-.orderyFilter {
-  display: flex;
-  justify-content: center;
-}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

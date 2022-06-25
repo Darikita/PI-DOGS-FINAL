@@ -1,6 +1,6 @@
 
 import { GET_DOGS, FILTER_SORTNAME, SORTBY_WEIGHT, FILTER_CREATED, GET_NAMES,TEMPERAMENT_TYPES, POST_DOGS, GET_DETAIL, FILTER_TEMPERAMENT, PRUEBA } from "../actions/actions";
- import { filDogies, } from './functions.js'
+import { filDogies } from './functions.js'
 
 const initialState = {
     charaDeatil:{},

@@ -15,8 +15,6 @@ export const filDogies = (str, arr) => {
 
   
         
-
-
 export const sorts = (str, arr) => {
   
     

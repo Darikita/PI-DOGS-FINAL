@@ -1,71 +1,94 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getDogDetails, getClear } from '../../actions/actions';
-import a from './detail.module.css'
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { useParams } from "react-router";
+import styles from "./DogDetail.module.css";
+import NavBar from "../NavBar/NavBar";
 
-import { NavLink, useParams  } from 'react-router-dom';
+export default function DogDetail() {
+  const [dog, setDog] = useState(null);
+  console.log(dog);
 
-function Detail () {
+  let { id } = useParams();
 
- const {id} = useParams()  
- const dispatch = useDispatch();
-
-   useEffect(() => {  
-    dispatch(getDogDetails(id))  
-    return () => dispatch(getClear())
-  
-  },[id, dispatch]);
-
- const dog = useSelector((state) => state.deteail);
-   
- console.log(dog)
- 
+  useEffect(() => {
+    axios.get("http://localhost:3001/dogs/" + id).then((response) => {
+      const data = response.data.map((e) => {
+        let temperament = e.temperament;
+        if (!temperament && e.temperaments) {
+          temperament = e.temperaments.map((temp) => {
+            return temp.name;
+          });
+        }
+        return {
+          ...e,
+          temperament,
+        };
+      });
+      setDog(data);
+    });
+    return () => {
+      setDog(null);
+    };
+  }, []);
   return (
-    <div className = 'recipe1'>
-       
-      { typeof dog === 'string'? <h1>{dog}</h1> : dog.length === 1 ? 
-         <div> 
-      
-        <NavLink to='/home' >
-          <button className = {a.fill}> BACK</button>
-         </NavLink>
+    <div className={styles.padre}>
+      <NavBar />
 
-         <div className ={a.byna}>
-         <h2 className ={a.name}>{dog[0].name}</h2> 
-      
-       <div className ={a.post}>
-        <img className={a.pic2}  src={dog[0].image ? dog[0].image :'https://t1.uc.ltmcdn.com/images/7/6/6/img_como_dibujar_un_perro_adorable_38667_600.jpg'} alt="img"/> 
+      <div className={styles.card}>
+        {dog ? (
+          <>
+            <div className={styles.detail}>
+              <div>
+                <img
+                  className={styles.imagen}
+                  src={dog["0"]["img"]}
+                  alt="imagen"
+                />
+              </div>
+              <div className={styles.tt}>
+                <h1>{dog["0"]["name"]}</h1>
+                <br />
 
-        {dog[0].life_span ? <h5 className = {a.title1}>Life span: {dog[0].life_span}</h5> : <></> } 
-         <div className={a.cont}> 
-        {dog[0].height ?<div>
-           <h5  className = {a.title}>Height</h5>
-            <p className = {a.ti}>min: {dog[0].height[0]} cm</p>
-            <p className = {a.ti}>max: {dog[0].height[1]} cm</p>
-        </div> : <p>Height not defined</p>} 
+                {dog["0"]["heightMin"] &&
+                dog["0"]["heightMax"] &&
+                !dog["0"]["height"] ? (
+                  <h4>
+                    Altura:{" "}
+                    {`${dog["0"]["heightMin"]} - ${dog["0"]["heightMax"]}`} cm.
+                  </h4>
+                ) : (
+                  <h4>Altura: {dog["0"]["height"]} cm.</h4>
+                )}
 
-        {dog[0].weight ?<div>
-           <h5  className = {a.title}>Weight</h5>
-            <p className = {a.ti}>min: {dog[0].weight[0]} kg</p>
-            <p className = {a.ti}>max: {dog[0].weight[1]} kg</p>
-        </div> : <p>Weight not defined</p>} 
-           </div>
-      
-           <h5  className = {a.title2}>Temperamets:</h5>
-              <ul className = {a.ti2}>
-             {dog[0].temperaments.length? dog[0].temperaments?.map((f,i) =>(f.name ? <p key = {i}>{f.name}</p>: <li className = {a.title3} key ={i}>{f}</li>)): <p>Temperaments not defined</p>}  
-             </ul>
-         
-         </div> 
-         </div> 
-       </div> 
-      : <div> 
-         <h1 className= {a.loading}> Loading ...</h1>
-         </div> }
-   
-    
-  </div>
-   ); 
+                {dog["0"]["weightMin"] &&
+                dog["0"]["weightMax"] &&
+                !dog["0"]["weight"] ? (
+                  <h4>
+                    Peso:{" "}
+                    {`${dog["0"]["weightMin"]} - ${dog["0"]["weightMax"]}`} kg.
+                  </h4>
+                ) : (
+                  <h4>Peso: {dog["0"]["weight"]} kg.</h4>
+                )}
+                {dog["0"]["lifeSpanMin"] &&
+                dog["0"]["lifeSpanMax"] &&
+                !dog["0"]["lifeSpan"] ? (
+                  <h4>
+                    Vda Aproximada:{" "}
+                    {`${dog["0"]["lifeSpanMin"]} a ${dog["0"]["lifeSpanMax"]}`}{" "}
+                    años.
+                  </h4>
+                ) : (
+                  <h4>Vida Aproximada: {dog["0"]["lifeSpan"]}</h4>
+                )}
+                <h4>Temperamentos: {dog["0"]["temperament"].join(", ")}.</h4>
+              </div>
+            </div>
+          </>
+        ) : (
+          <div className={styles.spiner}></div>
+        )}
+      </div>
+    </div>
+  );
 }
-
-export default Detail

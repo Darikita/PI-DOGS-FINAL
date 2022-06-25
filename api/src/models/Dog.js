@@ -1,39 +1,49 @@
-const { DataTypes } = require('sequelize');
-// Exportamos una funcion que define el modelo
-// Luego le injectamos la conexion a sequelize.
+const { DataTypes } = require("sequelize");
+
 module.exports = (sequelize) => {
-  // defino el modelo
-  sequelize.define('dog', {
-      id: {
-      type: DataTypes.UUID, //id alfanumerico
+  sequelize.define("dog", {
+    id: {
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
+      allowNull: false,
       primaryKey: true,
-      allowNull: false, //no permito que este vacio
-      defaultValue: DataTypes.UUIDV4 //
-      },
-      name: {
+    },
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true,
-      },
-      weight: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-      height: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-      
-      life_span: {
-        type: DataTypes.STRING,
-      },
-      userCreated: {
-        type: DataTypes.BOOLEAN,
-        allowNull: false,
-        defaultValue: true,
-      },
-      image: {
-        type: DataTypes.TEXT,
-      },
-  }, { timestamps: false });
+    },
+    heightMin: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    heightMax: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    weightMin: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    weightMax: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    lifeSpanMin: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    lifeSpanMax: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    img: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    createdInDb: {
+      type: DataTypes.BOOLEAN,
+      allowNull: true,
+      defaultValue: true,
+    },
+  });
 };

@@ -1,13 +1,13 @@
 import axios from "axios";
 
 export const GET_DOGS = 'GET_DOGS';
+export const GET_DETAIL ='GET_DETAIL'
 export const FILTER_SORTNAME = 'FILTER_SORTNAME';
 export const SORTBY_WEIGHT = 'SORTBY_WEIGHT';
 export const FILTER_CREATED = 'FILTER_CREATED';
 export const GET_NAMES = 'GET_NAMES';
 export const TEMPERAMENT_TYPES = 'TEMPERAMENT_TYPES';
-export const POST_DOGS = 'POST_DOGS'
-export const GET_DETAIL ='GET_DETAIL';
+export const POST_DOGS = 'POST_DOGS';
 export const FILTER_TEMPERAMENT ='FILTER_TEMPERAMENT';
 
 export const PRUEBA = 'PRUEBA';
