@@ -17,17 +17,11 @@ export default function SearchBar() {
     setSearch(e.target.value);
   }
   return (
-    <div className={styles.container}>
-      <form onSubmit={onSubmit}>
-        <input
-          placeholder="Search your dog"
-          className={styles.form}
-          type="text"
-          onChange={onInputChange}
-          value={search}
-        />
-        <input className={styles.buscar} type="submit" value="Buscar" />
-      </form>
+    <div className={styles.nav}>
+        <form className={styles.form} onSubmit={onSubmit}>
+        <input className={styles.input} type='text' placeholder="Search dog..." value={search} onChange={onInputChange}></input>
+        <input className={styles.btn} type='submit' value='🔍'></input>
+        </form>
     </div>
-  );
-}
+)
+} 

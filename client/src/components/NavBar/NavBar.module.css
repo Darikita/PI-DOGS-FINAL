@@ -27,21 +27,13 @@
 .navBar a {
   color: black;
 }
-
 .navBar ul li {
   padding: 5px;
   border-radius: 10px;
   list-style: none;
   display: inline-block;
   background: rgba(247, 239, 239, 0.3);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgb(248, 252, 0);
-  box-shadow: inset 5px 5px 10px #306d8a, inset -5px -5px 10px #42bab4;
   margin: 10px 30px;
-}
-.navBar ul li:hover {
-  background-color: #fad000;
 }
 
 .logo {
@@ -56,11 +48,6 @@
 .navLogo {
   list-style: none;
   text-decoration: none;
-}
-
-.sobreMi {
-  list-style: none;
-  height: 210px;
 }
 
 .crear {

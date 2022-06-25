@@ -1,57 +1,36 @@
-
-.form {
+.nav {
+  margin: 30px 30px 55px 30px;
   display: inline-block;
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  padding: 10px 20px 10px 17px;
-  border: 1px solid #b7b7b7;
-  -webkit-border-radius: 20px 3px;
-  border-radius: 20px 3px;
-  font-family: "Merriweather Sans", sans-serif;
-  color: rgb(0, 9, 59);
-  -o-text-overflow: clip;
-  text-overflow: clip;
-  background: rgba(255, 255, 255, 1);
-  -webkit-box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.2) inset;
-  box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.2) inset;
-  text-shadow: 19px 13px 0 rgba(255, 255, 255, 0.66);
-  -webkit-transition: all 200ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
-  -moz-transition: all 200ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
-  -o-transition: all 200ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
-  transition: all 200ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  position: center;
+  height: 20px;
+  padding: 0;
 }
 
-.buscar {
-  font-family: "Merriweather Sans", sans-serif;
-  font-family: "Oswald", sans-serif;
-  font-size: 15px;
-  min-width: 130px;
-  height: 40px;
-  color: #000;
-  padding: 5px 10px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  display: inline-block;
-  outline: none;
-  border-radius: 50px;
+.input {
+  padding: 6px 6px;
+  margin-top: 8px;
+  font-size: 20px;
   border: none;
-  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
-    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
-  background: #fad000;
-  z-index: 1;
+  font: 1vw/1.6 'Acme', sans-serif;
 }
 
-.buscar:hover:after {
-  width: 100%;
-  left: 0;
-  border-radius: 50px;
+.input:active {
+  border: #ddd;
+  color: white;
 }
-.buscar:hover {
-  background-color: #ffe566;
+
+.btn {
+  float: right;
+  padding: 9px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: rgb(127, 124, 119);
+  font-size: 160x;
+  border: none;
+  cursor: pointer;
 }
-.buscar:active {
-  top: 2px;
+
+.btn:hover {    
+  background-color: rgb(59, 51, 41);;
+  transform: scale(1.1);
 }
