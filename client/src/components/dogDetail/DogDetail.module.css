@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Mali:wght@700&family=Ubuntu+Mono&display=swap');
+
 .padre {
   display: flex;
   flex-direction: column;
@@ -11,7 +13,9 @@
   flex-direction: column;
 }
 .tt {
+  font-family: 'Ubuntu Mono', monospace;
   margin-top: -35%;
+  font-size: larger;
   FONT-WEIGHT: 800;
   FONT-WEIGHT: 800;
   FONT-VARIANT: JIS78;
@@ -22,6 +26,11 @@
   backdrop-filter: blur(20px);
   border-radius: 12px;
   padding: 15px;
+  color:rgb(49, 48, 48)
+}
+.tt h1{
+  font-family: 'Mali', cursive;
+  font-size:35px;
 }
 .imagen {
   object-fit: contain;

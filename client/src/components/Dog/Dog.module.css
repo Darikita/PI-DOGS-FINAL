@@ -4,7 +4,8 @@
   font-family: 'Mali', cursive;
   padding: 15px;
   font-size:large;
-  background-color: #c1b6bf;
+  /* background-color: #f0a260; */
+   background-color: #ca6b64; 
   margin-left: -10px;
   margin-right: -10px;
   color: aliceblue;
@@ -29,7 +30,6 @@
   margin-top: -10px;
   margin-left: -10px;
 }
-
 .card {
   -webkit-box-shadow: 8px 8px 8px 0px rgba(176,176,176,0.78);
   -moz-box-shadow: 8px 8px 8px 0px rgba(176,176,176,0.78);
@@ -40,6 +40,7 @@
   margin: 20px;
   padding: 10px;
   border-radius: 20px;
+  background-color: #e0d8db;
 }
 .card:hover {
   transform: scale(1.1);
@@ -54,5 +55,6 @@
   font-family: 'Ubuntu Mono', monospace;
   font-size:18px;
   margin-top: 10px;
+  color:rgb(57, 57, 57)
 }
 

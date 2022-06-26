@@ -7,6 +7,7 @@ import styles from "./SearchBar.module.css";
 export default function SearchBar() {
   const [search, setSearch] = useState("");
   let dispatch = useDispatch();
+  
   function onSubmit(e) {
     e.preventDefault();
     dispatch(searchDogs(search));

@@ -36,7 +36,6 @@ export default function reducer(state = initialState, action) {
       };
     case SORT:
       let orderedDogs = [...state.filteredDogs];
-
       orderedDogs = orderedDogs.sort((a, b) => {
         if (a.name < b.name) {
           return action.payload === ASCENDENTE ? -1 : 1;

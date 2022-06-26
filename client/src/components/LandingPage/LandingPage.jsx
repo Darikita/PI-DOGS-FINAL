@@ -16,7 +16,7 @@ export default function LandingPage(){
         <span>G</span>
         <span>S</span>
         <span>!</span>
-        </h4> 
+      </h4> 
       <Link to="/home">
           <button className={styles.btn}>ENTER</button>
       </Link>

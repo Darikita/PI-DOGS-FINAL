@@ -51,10 +51,10 @@ export function fetchTemperaments() {
   };
 }
 
-export function searchDogs(search) {
+export function searchDogs(name) {
   return function (dispatch) {
     axios
-      .get("http://localhost:3001/dogs?name=" + search)
+      .get("http://localhost:3001/dogs?name=" + name)
       .then((dogs) => {
         const data = dogs.data.map((dog) => {
           let temperament = dog.temperament;
@@ -73,8 +73,8 @@ export function searchDogs(search) {
           payload: data,
         });
       })
-      .catch((error) => {
-        console.log(error);
+      .catch(() => {
+        alert("Dog not found!")
       });
   };
 }

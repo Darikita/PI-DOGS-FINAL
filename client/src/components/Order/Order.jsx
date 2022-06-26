@@ -28,11 +28,11 @@ export default function Order() {
       };
     });
     console.log(ordenPeso);
-    if (valor === "Peso Ascendente") {
+    if (valor === "Weight Ascending") {
       ordenPeso.sort((a, b) => {
         return a.weightMin - b.weightMin;
       });
-    } else if (valor === "Peso Descendente") {
+    } else if (valor === "Weight Descending") {
       ordenPeso.sort((a, b) => {
         return b.weightMin - a.weightMin;
       });
@@ -45,14 +45,14 @@ export default function Order() {
   return (
     <div className={styles.containterOrder}>
       <div>
-        Ordenar por:
+        Sort by:
         <select
           className={styles.selectNombre}
           name="select"
           onChange={onSelectChange}
         >
-          <option value={ASCENDENTE}>Nombre (A - Z)</option>
-          <option value={DESCENDENTE}>Nombre (Z - A)</option>
+          <option value={ASCENDENTE}>Name  (A - Z)</option>
+          <option value={DESCENDENTE}>Name  (Z - A)</option>
         </select>
       </div>
       <div>
@@ -61,8 +61,8 @@ export default function Order() {
           name="select"
           onChange={(e) => onSelectChanges(e)}
         >
-          <option>Peso Ascendente</option>
-          <option>Peso Descendente</option>
+          <option>Weight Ascending</option>
+          <option>Weight Descending</option>
         </select>
       </div>
     </div>

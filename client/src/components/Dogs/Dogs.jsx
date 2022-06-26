@@ -2,15 +2,15 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchDogs, fetchTemperaments } from "../../Redux/actions";
 import Dog from "../Dog/Dog";
-import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 import styles from "./Dogs.module.css";
+import Logo from "./previous.png";
+import Logo2 from "./next.png";
 
 export default function Dogs() {
   let dogs = useSelector((state) => state.filteredDogs);
   console.log(dogs);
   const [page, setPage] = useState(1);
   const [PostPage, setPostPage] = useState(8);
-
   const PostPagOne = page * PostPage;
   const firstPostPage = PostPagOne - PostPage;
   const PostByPage = dogs.slice(firstPostPage, PostPagOne);
@@ -31,24 +31,24 @@ export default function Dogs() {
 
   function anterior() {
     if (page > 1) {
-      document.getElementById("paginas").innerText = `Página ${page - 1}`;
+      document.getElementById("paginas").innerText = ` ${page - 1}`;
       setPage(page - 1);
     }
   }
   function siguiente() {
     if (page * PostPage <= dogs.length) {
-      document.getElementById("paginas").innerText = `Página ${page + 1}`;
+      document.getElementById("paginas").innerText = ` ${page + 1}`;
       setPage(page + 1);
     }
   }
-  console.log(page);
+  // console.log(page);
 
   const handlePageChange = (e) => {
     document.getElementById("paginas").innerText = `Página ${e.target.value}`;
     document.getElementById("unadetantas").innerText = ` /${maxPages}`;
     e.target.value ? setPage(e.target.value) : setPage(1);
   };
-  console.log(dogs);
+  // console.log(dogs);
   return (
     <div className={styles.padre}>
       <div className={styles.carDog}>
@@ -69,14 +69,18 @@ export default function Dogs() {
         })}
       </div>
       <div className={styles.containerPag}>
-        <span className={styles.countPag} id="paginas">
-          Page 1
-        </span>
         <button className={styles.botonAnterior} onClick={(e) => anterior(e)}>
-          {AiOutlineArrowLeft()} Previous
+          <img className={styles.logo} src={Logo} alt="" />
         </button>
+        <span className={styles.countPag} id="paginas">
+           1
+        </span>
+           <span className="countPag" id="unadetantas">
+          {" "}
+          de {maxPages}
+        </span>
         <button className={styles.botonSiguiente} onClick={(e) => siguiente(e)}>
-          Next {AiOutlineArrowRight()}
+          <img className={styles.logo} src={Logo2} alt="" /> 
         </button>
         <input
           className={styles.input}
@@ -87,10 +91,6 @@ export default function Dogs() {
           max={maxPages}
           onChange={(e) => handlePageChange(e)}
         />
-        <span className="countPag" id="unadetantas">
-          {" "}
-          de {maxPages}
-        </span>
       </div>
     </div>
   );

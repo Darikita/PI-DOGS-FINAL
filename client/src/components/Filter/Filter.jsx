@@ -25,13 +25,13 @@ export default function Filter() {
     e.preventDefault();
     let valor = e.target.value;
     var filtro = dogs.filter((e) => {
-      if (valor === "API y BD") {
+      if (valor === "Existing & Created") {
         return e;
-      } else if (valor === "Existentes y Creados") {
+      } else if (valor === "All") {
         return e;
-      } else if (valor === "Existentes") {
+      } else if (valor === "Existing") {
         return !e.createdAt;
-      } else if (valor === "Creados") {
+      } else if (valor === "Created") {
         return e.createdAt;
       }
     });
@@ -42,22 +42,22 @@ export default function Filter() {
   return (
     <div className={styles.containerFilter}>
       <div>
-        Filtrar por:
+        Filter by:
         <select
           className={styles.selectT}
           name="select"
           onChange={(e) => cambio(e)}
         >
-          <option>Temperamento</option>
+          <option>Temperament</option>
           {temperaments.map((e, i) => (
             <option key={i}>{e}</option>
           ))}
         </select>
         <select className={styles.selectABD} onChange={(e) => onChange(e)}>
-          <option>API y BD</option>
-          <option>Existentes y Creados</option>
-          <option>Existentes</option>
-          <option>Creados</option>
+          <option>Existing & Created</option>
+          <option>All</option>
+          <option>Existing</option>
+          <option>Created</option>
         </select>
       </div>
     </div>

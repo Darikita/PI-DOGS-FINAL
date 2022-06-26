@@ -37,12 +37,16 @@
 }
 
 .logo {
+  margin-left: 20%;
   list-style: none;
   height: 40px;
-  margin-left: 20px;
+  animation: latidos 1s infinite;
+	transform-origin: center;
 }
-.logo:hover {
-  height: 50px;
+@keyframes latidos {
+  from { transform: none; }
+  50% { transform: scale(1.07); }
+  to { transform: none; }
 }
 
 .navLogo {

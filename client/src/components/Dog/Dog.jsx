@@ -19,7 +19,6 @@ export default function Dog({
     }
     return "Este error";
   }
-
   return (
     <div className={styles.card}>
       <Link to={`/${id}`}>
@@ -31,9 +30,9 @@ export default function Dog({
             Peso: {weightMin} - {weightMax} kg.
           </h5>
         ) : (
-          <h5><u>Peso</u>: {weight} kg.</h5>
+          <h5><u>Weight</u>: {weight} kg.</h5>
         )}<br></br>
-        <h5><u>Temperamentos</u>: {renderTemperaments(temperament)}.</h5>
+        <h5><u>Temperaments</u>: {renderTemperaments(temperament)}.</h5>
         </div>
       </Link>
     </div>

@@ -25,7 +25,7 @@
 
 }
 
- h4 {
+ .div h4 {
 font-size:90px;
 margin-bottom: 35px; 
 margin-top: 10px;
@@ -33,7 +33,7 @@ margin-top: 10px;
  user-select:none;
 }
 
-h4 span { display:inline-block ; animation:float .2s ease-in-out infinite; }
+.div h4 span { display:inline-block ; animation:float .2s ease-in-out infinite; }
  @keyframes float {
   0%,100%{ transform:none; }
   33%{ transform:translateY(-1px) rotate(-2deg); }
@@ -46,10 +46,10 @@ h4 span { display:inline-block ; animation:float .2s ease-in-out infinite; }
   50%{ transform:translateY(-20px) rotate(3deg) scale(1.1);  }
 }
 /* 39, 100, 47 */
-span:nth-child(4n) { color:hsl(28, 75%, 55%); text-shadow:1px 1px hsl(28, 75%, 45%), 2px 2px hsl(39, 45%, 45%), 3px 3px hsl(39, 45%, 45%), 4px 4px hsl(39, 75%, 45%); }
-span:nth-child(4n-1) { color:hsl(5, 35%, 55%); text-shadow:1px 1px hsl(25, 35%, 45%), 2px 2px hsl(5, 35%, 45%), 3px 3px hsl(5, 35%, 45%), 4px 4px hsl(5, 35%, 45%); }
-span:nth-child(4n-2) { color:hsl(30, 64%, 63%); text-shadow:1px 1px hsl(305, 25%, 50%), 2px 2px hsl(30, 25%, 50%), 3px 3px hsl(30, 25%, 50%), 4px 4px hsl(30, 25%, 50%); }
-span:nth-child(4n-3) { color:hsl(340, 61%, 44%); text-shadow:1px 1px hsl(343, 45%, 50%), 2px 2px hsl(343, 45%, 50%), 3px 3px hsl(343, 45%, 50%), 4px 4px hsl(340, 61%, 44%); }
+.div span:nth-child(4n) { color:hsl(28, 75%, 55%); text-shadow:1px 1px hsl(28, 75%, 45%), 2px 2px hsl(39, 45%, 45%), 3px 3px hsl(39, 45%, 45%), 4px 4px hsl(39, 75%, 45%); }
+.div span:nth-child(4n-1) { color:hsl(5, 35%, 55%); text-shadow:1px 1px hsl(25, 35%, 45%), 2px 2px hsl(5, 35%, 45%), 3px 3px hsl(5, 35%, 45%), 4px 4px hsl(5, 35%, 45%); }
+.div span:nth-child(4n-2) { color:hsl(30, 64%, 63%); text-shadow:1px 1px hsl(305, 25%, 50%), 2px 2px hsl(30, 25%, 50%), 3px 3px hsl(30, 25%, 50%), 4px 4px hsl(30, 25%, 50%); }
+.div span:nth-child(4n-3) { color:hsl(340, 61%, 44%); text-shadow:1px 1px hsl(343, 45%, 50%), 2px 2px hsl(343, 45%, 50%), 3px 3px hsl(343, 45%, 50%), 4px 4px hsl(340, 61%, 44%); }
 
 h4 span:nth-child(2){ animation-delay:.05s; }
 h4 span:nth-child(3){ animation-delay:.1s; }

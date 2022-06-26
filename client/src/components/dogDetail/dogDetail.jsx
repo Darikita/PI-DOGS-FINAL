@@ -51,21 +51,21 @@ export default function DogDetail() {
                 dog["0"]["heightMax"] &&
                 !dog["0"]["height"] ? (
                   <h5>
-                    Altura:{" "}
+                    Height:{" "}
                     {`${dog["0"]["heightMin"]} - ${dog["0"]["heightMax"]}`} cm.
                   </h5>
                 ) : (
-                  <h5>Altura: {dog["0"]["height"]} cm.</h5>
+                  <h5><u>Height</u>: {dog["0"]["height"]} cm.</h5>
                 )}
                 {dog["0"]["weightMin"] &&
                 dog["0"]["weightMax"] &&
                 !dog["0"]["weight"] ? (
                   <h5>
-                    Peso:{" "}
+                    Weight:{" "}
                     {`${dog["0"]["weightMin"]} - ${dog["0"]["weightMax"]}`} kg.
                   </h5>
                 ) : (
-                  <h5>Peso: {dog["0"]["weight"]} kg.</h5>
+                  <h5><u>Weight</u>: {dog["0"]["weight"]} kg.</h5>
                 )}
                 {dog["0"]["lifeSpanMin"] &&
                 dog["0"]["lifeSpanMax"] &&
@@ -76,9 +76,9 @@ export default function DogDetail() {
                     años.
                   </h5>
                 ) : (
-                  <h5>Vida Aproximada: {dog["0"]["lifeSpan"]}</h5>
+                  <h5><u>Life Span</u>: {dog["0"]["lifeSpan"]}.</h5>
                 )}
-                <h5>Temperamentos: {dog["0"]["temperament"].join(", ")}.</h5>
+                <h5><u>Temperaments</u>: {dog["0"]["temperament"].join(", ")}.</h5>
               </div>
             </div>
           </>
