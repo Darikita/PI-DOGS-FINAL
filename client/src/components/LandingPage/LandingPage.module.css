@@ -47,7 +47,7 @@ margin-top: 10px;
 }
 /* 39, 100, 47 */
 .div span:nth-child(4n) { color:hsl(28, 75%, 55%); text-shadow:1px 1px hsl(28, 75%, 45%), 2px 2px hsl(39, 45%, 45%), 3px 3px hsl(39, 45%, 45%), 4px 4px hsl(39, 75%, 45%); }
-.div span:nth-child(4n-1) { color:hsl(5, 35%, 55%); text-shadow:1px 1px hsl(25, 35%, 45%), 2px 2px hsl(5, 35%, 45%), 3px 3px hsl(5, 35%, 45%), 4px 4px hsl(5, 35%, 45%); }
+.div span:nth-child(4n-1) { color:hsl(5, 72%, 70%); text-shadow:1px 1px hsl(18, 83%, 68%), 2px 2px hsl(5, 35%, 45%), 3px 3px hsl(5, 35%, 45%), 4px 4px hsl(5, 35%, 45%); }
 .div span:nth-child(4n-2) { color:hsl(30, 64%, 63%); text-shadow:1px 1px hsl(305, 25%, 50%), 2px 2px hsl(30, 25%, 50%), 3px 3px hsl(30, 25%, 50%), 4px 4px hsl(30, 25%, 50%); }
 .div span:nth-child(4n-3) { color:hsl(340, 61%, 44%); text-shadow:1px 1px hsl(343, 45%, 50%), 2px 2px hsl(343, 45%, 50%), 3px 3px hsl(343, 45%, 50%), 4px 4px hsl(340, 61%, 44%); }
 

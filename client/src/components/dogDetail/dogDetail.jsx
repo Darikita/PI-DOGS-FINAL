@@ -16,10 +16,8 @@ export default function DogDetail() {
         let temperament = e.temperament;
         if (!temperament && e.temperaments) {
           temperament = e.temperaments.map((temp) => {
-            return temp.name;
-          });
-        }
-        return {
+            return temp.name;});
+        } return {
           ...e,
           temperament,
         };
@@ -46,7 +44,6 @@ export default function DogDetail() {
               </div>
               <div className={styles.tt}>
                 <h1>{dog["0"]["name"]}</h1>
-                <br />
                 {dog["0"]["heightMin"] &&
                 dog["0"]["heightMax"] &&
                 !dog["0"]["height"] ? (
@@ -71,7 +68,7 @@ export default function DogDetail() {
                 dog["0"]["lifeSpanMax"] &&
                 !dog["0"]["lifeSpan"] ? (
                   <h5>
-                    Vda Aproximada:{" "}
+                    Vida Aproximada:{" "}
                     {`${dog["0"]["lifeSpanMin"]} a ${dog["0"]["lifeSpanMax"]}`}{" "}
                     años.
                   </h5>
@@ -83,7 +80,12 @@ export default function DogDetail() {
             </div>
           </>
         ) : (
-          <div className={styles.spiner}></div>
+          <div>
+              <div class={styles.scanner}>
+                  <h1>Loading...</h1>
+                </div>
+          <img src={"https://i.gifer.com/7Jfa.gif"}/>
+        </div>
         )}
       </div>
     </div>

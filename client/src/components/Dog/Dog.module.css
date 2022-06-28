@@ -1,11 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Mali:wght@700&family=Ubuntu+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jua&family=Mali&display=swap');
+
 .name{
   float:inline-start;
-  font-family: 'Mali', cursive;
+  font-family: 'Jua', sans-serif;;
   padding: 15px;
-  font-size:large;
+  font-size:20px;
+  font-weight: 170;
   /* background-color: #f0a260; */
-   background-color: #ca6b64; 
+   background-color: #e88078;
   margin-left: -10px;
   margin-right: -10px;
   color: aliceblue;
@@ -13,17 +15,14 @@
   border: 20px;
   text-align: center;
   overflow: hidden;
-  border-top: 20px;
+ 
 }
 
 .imagen {
-  object-fit: contain;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   width: 290px;
   height: 200px;
-  overflow: hidden;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   object-fit: cover;
@@ -52,9 +51,20 @@
   color: black;
 }
 .contenido{
-  font-family: 'Ubuntu Mono', monospace;
+  /* width:290px;
+  height: 100px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Mali', cursive;
   font-size:18px;
   margin-top: 10px;
   color:rgb(57, 57, 57)
+}
+.temp{
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  font-size:16px;
 }
 

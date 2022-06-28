@@ -1,6 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,600;0,900;1,200;1,600&family=Merriweather+Sans:wght@300;700&family=Oswald&family=PT+Sans:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Jua&family=Mali&display=swap');
 
 .containterOrder {
+  font-family: 'Jua', sans-serif;
+  color: #444;
   display: flex;
   margin: 10px;
 }
@@ -8,7 +10,7 @@
 select {
   font-size: 14px;
   padding: 10px;
-  font-family: "Merriweather Sans", sans-serif;
+  font-family: 'Mali', cursive;
   font-weight: 400;
   color: #444;
   line-height: 1.3;
@@ -17,7 +19,7 @@ select {
   max-width: 100%;
   box-sizing: border-box;
   margin: 0;
-  border: 1px solid #aaa;
+  border: 2px solid  #e88078;
   box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.03);
   border-radius: 0.3em;
   -moz-appearance: none;
@@ -34,11 +36,11 @@ select {
   display: none;
 } */
 select:hover {
-  border-color: #000;
+  border-color: rgb(155, 147, 147);
 }
 select:focus {
   border-color: #aaa;
-  box-shadow: 0 0 1px 3px #fad000;
+  box-shadow: 0 0 1px 3px  #f0a260; 
   box-shadow: 0 0 0 3px -moz-mac-focusring;
   color: #222;
   outline: none;

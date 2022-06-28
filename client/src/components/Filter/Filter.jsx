@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { filterxTemperaments } from "../../Redux/actions";
+import { filterTemps } from "../../Redux/actions";
 import styles from "./Filter.Module.css";
 
 export default function Filter() {
@@ -17,10 +17,8 @@ export default function Filter() {
       }
       return e.temperament.includes(valor);
     });
-
-    dispatch(filterxTemperaments(fil));
+    dispatch(filterTemps(fil));
   };
-
   const onChange = (e) => {
     e.preventDefault();
     let valor = e.target.value;
@@ -35,10 +33,8 @@ export default function Filter() {
         return e.createdAt;
       }
     });
-
-    dispatch(filterxTemperaments(filtro));
+    dispatch(filterTemps(filtro));
   };
-
   return (
     <div className={styles.containerFilter}>
       <div>

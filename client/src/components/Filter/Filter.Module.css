@@ -1,11 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&family=Mali&display=swap');
+
 .containerFilter {
+  font-family: 'Jua', sans-serif;
+  color: #444;
   display: flex;
   margin: 10px;
 }
 
 .selectT {
+  font-family: 'Mali', cursive;
   margin: 10px;
+  border: 2px solid #e88078; 
 }
 .selectABD {
   margin: 10px;
+  border: 2px solid  #e88078; 
 }

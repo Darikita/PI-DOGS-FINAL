@@ -44,15 +44,25 @@ export default function Dogs() {
   // console.log(page);
 
   const handlePageChange = (e) => {
-    document.getElementById("paginas").innerText = `Página ${e.target.value}`;
-    document.getElementById("unadetantas").innerText = ` /${maxPages}`;
+    document.getElementById("paginas").innerText = ` ${e.target.value}`;
+    document.getElementById("unadetantas").innerText = `/${maxPages}`;
     e.target.value ? setPage(e.target.value) : setPage(1);
+
   };
   // console.log(dogs);
+
   return (
     <div className={styles.padre}>
       <div className={styles.carDog}>
-        {PostByPage.map((e) => {
+      {!PostByPage.length >0 ? (
+        <div className={styles.scanner}>
+          <h1>Loading...</h1>
+          <img
+            src={"https://i.gifer.com/7Jfa.gif"}
+          />
+        </div>
+      ) :
+        PostByPage.map((e) => {
           return (
             <Dog
               key={e.id}
@@ -75,9 +85,9 @@ export default function Dogs() {
         <span className={styles.countPag} id="paginas">
            1
         </span>
-           <span className="countPag" id="unadetantas">
+           <span className={styles.countPag2} id="unadetantas">
           {" "}
-          de {maxPages}
+          / {maxPages}
         </span>
         <button className={styles.botonSiguiente} onClick={(e) => siguiente(e)}>
           <img className={styles.logo} src={Logo2} alt="" /> 

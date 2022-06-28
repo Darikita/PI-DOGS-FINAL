@@ -17,7 +17,9 @@ export default function NavBar() {
         <ul className={styles.unl}>
           <div className={styles.navLinks}>
             <NavLink to="/add">
-              <li>CREATE YOUR DOG</li>
+            <button>
+               CREATE YOUR DOG 
+            </button>
             </NavLink>
           </div>
         </ul>

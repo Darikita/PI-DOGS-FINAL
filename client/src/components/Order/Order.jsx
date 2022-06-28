@@ -14,7 +14,6 @@ export default function Order() {
   let onSelectChanges = (e) => {
     e.preventDefault();
     let valor = e.target.value;
-
     var ordenPeso = filteredDogs.map((e) => {
       if (e.weight && !e.weightMin) {
         return {
@@ -22,12 +21,12 @@ export default function Order() {
           weightMin: `${e.weight.charAt(0)}${e.weight.charAt(1)}`,
         };
       }
-
       return {
         ...e,
       };
     });
-    console.log(ordenPeso);
+
+    // console.log(ordenPeso);
     if (valor === "Weight Ascending") {
       ordenPeso.sort((a, b) => {
         return a.weightMin - b.weightMin;
@@ -37,9 +36,8 @@ export default function Order() {
         return b.weightMin - a.weightMin;
       });
     }
-
     dispatch(sort_weight(ordenPeso));
-    console.log(filteredDogs);
+    // console.log(filteredDogs);
   };
 
   return (

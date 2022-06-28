@@ -23,16 +23,18 @@ export default function Dog({
     <div className={styles.card}>
       <Link to={`/${id}`}>
       <img className={styles.imagen} src={img} alt="imagen" />
-        <h5 className={styles.name}>{name}</h5>
+        <h4 className={styles.name}>{name}</h4>
         <div className={styles.contenido}>
-        {weightMin && weightMax && !weight ? (
-          <h5>
-            Peso: {weightMin} - {weightMax} kg.
-          </h5>
+          <div>
+            {weightMin && weightMax && !weight ? (
+            <h5> Peso: {weightMin} - {weightMax} kg.</h5>
         ) : (
           <h5><u>Weight</u>: {weight} kg.</h5>
-        )}<br></br>
-        <h5><u>Temperaments</u>: {renderTemperaments(temperament)}.</h5>
+        )}
+          </div>
+          <div className={styles.temp}>
+            <h5><u>Temperaments</u>: {renderTemperaments(temperament)}.</h5>
+          </div>
         </div>
       </Link>
     </div>

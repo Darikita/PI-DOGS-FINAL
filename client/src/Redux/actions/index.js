@@ -93,7 +93,7 @@ export function sort_weight(order) {
   };
 }
 
-export function filterxTemperaments(temperament) {
+export function filterTemps(temperament) {
   return {
     type: FILTER_TEMPERAMENT,
     payload: temperament,

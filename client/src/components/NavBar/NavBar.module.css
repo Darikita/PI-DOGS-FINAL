@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,600;0,900;1,200;1,600&family=Oswald&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Jua&family=Mali&display=swap');
 
 * {
   margin: 0;
@@ -16,25 +16,24 @@
 }
 
 .navBar {
-  font-family: "Barlow Semi Condensed", sans-serif;
-  font-family: "Oswald", sans-serif;
-  font-size: 25px;
+  font-family: 'Jua', sans-serif;
+  font-size: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.navBar a {
+/* .navBar a {
   color: black;
-}
-.navBar ul li {
+} */
+/* .navBar ul li {
   padding: 5px;
   border-radius: 10px;
   list-style: none;
   display: inline-block;
   background: rgba(247, 239, 239, 0.3);
   margin: 10px 30px;
-}
+} */
 
 .logo {
   margin-left: 20%;
@@ -54,7 +53,44 @@
   text-decoration: none;
 }
 
-.crear {
-  list-style: none;
-  height: 185px;
-}
+.navLinks button {
+  font-family: 'Jua', sans-serif;
+  padding: 10px 20px;
+  border: unset;
+  margin-right: 25px;
+  border-radius: 15px;
+  color: #e88078;
+  z-index: 1;
+  background: #e8e8e8;
+  position: relative;
+  font-weight: 1000;
+  font-size: 17px;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+  transition: all 250ms;
+  overflow: hidden;
+  cursor: pointer;
+ }
+ 
+ .navLinks button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  border-radius: 15px;
+  background-color: #e88078;
+  z-index: -1;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+  transition: all 250ms
+ }
+ 
+ .navLinks button:hover {
+  color: #e8e8e8;
+ }
+ 
+ .navLinks button:hover::before {
+  width: 100%;
+ }

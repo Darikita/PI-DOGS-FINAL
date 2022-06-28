@@ -1,7 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Mali:wght@700&family=Ubuntu+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jua&family=Mali&display=swap');
 
 .padre {
   display: flex;
+  
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
@@ -13,7 +14,9 @@
   flex-direction: column;
 }
 .tt {
-  font-family: 'Ubuntu Mono', monospace;
+  width: 490px;
+  height:152px;
+  font-family: 'Mali', cursive;
   margin-top: -35%;
   font-size: larger;
   FONT-WEIGHT: 800;
@@ -29,7 +32,9 @@
   color:rgb(49, 48, 48)
 }
 .tt h1{
-  font-family: 'Mali', cursive;
+  color:#e88078;
+  text-shadow: 0 0 3px rgb(49, 48, 48);
+  font-family: 'Jua', sans-serif;
   font-size:35px;
 }
 .imagen {
@@ -43,7 +48,7 @@
 
 .card {
   margin-top:5%; 
-  background: rgba(255, 255, 255, 0.315);
+  /* background: rgba(255, 255, 255, 0.315);
   backdrop-filter: blur(20px);
   -webkit-box-shadow: 7px 10px 21px 1px rgb(132, 118, 118);
   -moz-box-shadow: 7px 10px 21px 1px rgb(180, 153, 153);
@@ -52,7 +57,7 @@
   width: 500px;
   height:480px;
   padding: 10px;
-  border-radius: 20px;
+  border-radius: 20px; */ 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -63,22 +68,44 @@
   text-decoration: none;
   color: black;
 }
-
-.spiner {
-  border: 4px solid rgba(0, 0, 0, 0.1);
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border-left-color: #fad000;
-  animation: spin 1s ease infinite;
+.scanner{
+  margin-top: 20%;
 }
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
+.scanner h1 {
+  color: transparent;
+  font-size: 3rem;
+  position: relative;
+  overflow: hidden;
+ }
+ 
+ .scanner h1::before {
+  content: "Loading...";
+  font-family: 'Jua', sans-serif;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  border-right: 4px solid  #e88078; 
+  overflow: hidden;
+  color: #f6948d; 
+  animation: load91371 2s linear infinite;
+ }
+ 
+ @keyframes load91371 {
+  0%, 10%, 100% {
+   width: 0;
   }
-
-  100% {
-    transform: rotate(360deg);
+ 
+  10%,20%,30%,40%,50%,60%,70%,80%,90%,100% {
+   border-right-color: transparent;
   }
-}
+ 
+  11%,21%,31%,41%,51%,61%,71%,81%,91% {
+   border-right-color:  #e88078; 
+  }
+ 
+  60%, 80% {
+   width: 100%;
+  }
+ }

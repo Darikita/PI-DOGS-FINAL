@@ -1,62 +1,21 @@
-@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,600;0,900;1,200;1,600&family=Merriweather+Sans:wght@300;700&family=Oswald&family=PT+Sans:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Jua&family=Mali&display=swap');
 
-/* font-family: 'Barlow Semi Condensed', sans-serif;
-font-family: 'Merriweather Sans', sans-serif;
-font-family: 'Oswald', sans-serif;
-font-family: 'PT Sans', sans-serif; */
 
 .containerPadre {
-  font-family: "Merriweather Sans", sans-serif;
+  font-family: 'Jua', sans-serif;
 }
 
 .container {
+  background-color: #d7cfd3;
   display: block;
   flex-direction: column;
   font-size: 18px;
   margin-top: 50px;
-  background: rgba(255, 255, 255, 1);
-  background: -moz-linear-gradient(
-    top,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(246, 246, 246, 1) 47%,
-    rgba(237, 237, 237, 1) 100%
-  );
-  background: -webkit-gradient(
-    left top,
-    left bottom,
-    color-stop(0%, rgba(255, 255, 255, 1)),
-    color-stop(47%, rgba(246, 246, 246, 1)),
-    color-stop(100%, rgba(237, 237, 237, 1))
-  );
-  background: -webkit-linear-gradient(
-    top,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(246, 246, 246, 1) 47%,
-    rgba(237, 237, 237, 1) 100%
-  );
-  background: -o-linear-gradient(
-    top,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(246, 246, 246, 1) 47%,
-    rgba(237, 237, 237, 1) 100%
-  );
-  background: -ms-linear-gradient(
-    top,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(246, 246, 246, 1) 47%,
-    rgba(237, 237, 237, 1) 100%
-  );
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(246, 246, 246, 1) 47%,
-    rgba(237, 237, 237, 1) 100%
-  );
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=0 );
-  -webkit-box-shadow: 11px 11px 9px 0px rgba(0, 0, 0, 0.9);
-  -moz-box-shadow: 11px 11px 9px 0px rgba(0, 0, 0, 0.9);
-  box-shadow: 11px 11px 9px 0px rgba(0, 0, 0, 0.9);
-  background-color: rgb(214, 180, 27);
+  -webkit-box-shadow: 8px 8px 8px 0px rgba(134, 134, 134, 0.78);
+  -moz-box-shadow: 8px 8px 8px 0px rgba(134, 134, 134, 0.78);
+  box-shadow: 8px 8px 8px 0px rgba(134, 134, 134, 0.78);
+
   width: 500px;
   height: fit-content;
   margin: 20px;
@@ -67,14 +26,15 @@ font-family: 'PT Sans', sans-serif; */
 .padre {
   display: flex;
   justify-content: center;
+  
 }
 
 .input {
   display: inline-block;
   padding: 10px 20px 10px 17px;
-  border: 1px solid #b7b7b7;
-  border-radius: 20px 3px;
-  font-family: "Merriweather Sans", sans-serif;
+  border: 2px solid  #e88078; 
+  border-radius: 10px;
+  font-family: 'Mali', cursive;
   font-size: 15px;
   color: rgb(0, 9, 59);
   background: rgba(255, 255, 255, 1);
@@ -83,11 +43,11 @@ font-family: 'PT Sans', sans-serif; */
 }
 
 .inputEnviar {
-  font-family: "Merriweather Sans", sans-serif;
+  font-family: 'Mali', cursive;
   font-size: 15px;
   min-width: 130px;
   height: 40px;
-  color: #000;
+  color: #e88078; 
   padding: 5px 10px;
   font-weight: bold;
   cursor: pointer;
@@ -99,7 +59,7 @@ font-family: 'PT Sans', sans-serif; */
   border: none;
   box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
     7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
-  background: #fad000;
+  background: #686065;
   z-index: 1;
 }
 
@@ -109,7 +69,8 @@ font-family: 'PT Sans', sans-serif; */
   border-radius: 50px;
 }
 .inputEnviar:hover {
-  background-color: #ffe566;
+  background-color:  #e88078; 
+  color: #686065;
 }
 .inputEnviar:active {
   top: 2px;
@@ -125,14 +86,12 @@ font-family: 'PT Sans', sans-serif; */
   display: flex;
   width: fit-content;
   height: fit-content;
-
   font-size: 15px;
-
   padding: 10px 20px 10px 17px;
-  border: 1px solid #b7b7b7;
+  border: 2px solid  #e88078; 
   -webkit-border-radius: 20px 3px;
-  border-radius: 20px 3px;
-  font-family: "Merriweather Sans", sans-serif;
+  border-radius: 10px;
+  font-family: 'Mali', cursive;
   color: rgb(0, 9, 59);
   -o-text-overflow: clip;
   text-overflow: clip;

@@ -15,7 +15,7 @@ export default function AddDog() {
     temperament: [],
   });
   const [error, setError] = useState({
-    error: "Debe ingresar una raza",
+    error: "You must type a name",
   });
   let history = useHistory();
   let dispatch = useDispatch();
@@ -25,28 +25,27 @@ export default function AddDog() {
 
   function validationForm(value) {
     let errors = {};
-    if (!value.name) errors.name = "Debe ingresar una raza";
+    if (!value.name) errors.name = "You must type a name";
     else if (!/^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/.test(value.name)) {
-      errors.name = "Los nombres propios empiezan con mayúscula";
+      errors.name = "❌ The first letter must be uppercase";
     }
     if (parseInt(value.heightMax) <= parseInt(value.heightMin)) {
-      errors.heightMax = "La altura máxima debe ser mayor a la mínima";
+      errors.heightMax = "❌ Min value cannot be greater than the max";
     }
     if (parseInt(value.weightMax) <= parseInt(value.weightMin)) {
-      errors.weightMax = "El peso máximo debe ser mayor a la mínimo";
+      errors.weightMax = "❌ Min value cannot be greater than the max";
     }
     if (parseInt(value.lifeSpanMax) <= parseInt(value.lifeSpanMin)) {
       errors.lifeSpanMax =
-        "La esperanza de vida máxima debe ser mayor a la mínima";
+        "❌ Min value cannot be greater than the max";
     }
     if (value.temperament.length < 1) {
       console.log(value.temperament);
-      errors.temperament = "Debe agregar por lo menos un temperamento";
+      errors.temperament = "❌Must select at least one temperament";
     }
 
     return errors;
   }
-
   const onSelectChange = (e) => {
     setDog({
       ...dog,
@@ -58,7 +57,6 @@ export default function AddDog() {
       })
     );
   };
-
   function onInputChange(e) {
     e.preventDefault();
     setDog({
@@ -74,27 +72,25 @@ export default function AddDog() {
       })
     );
   }
-
   function onSubmit(e) {
     e.preventDefault();
     axios.post("http://localhost:3001/dogs/new", dog).then(() => {
       history.push("/");
     });
     dog
-      ? alert("Creaste a tu mejor amigo, buscalo filtrando por 'Creados'")
-      : alert("Necesitas completar todos los valores");
+      ? alert("Dog created successfully")
+      : alert("You must fill in all the values.");
     console.log(dog);
   }
-
   return (
     <div className={styles.containerPadre}>
       <NavBar />
       <div className={styles.padre}>
         <div className={styles.container}>
-          <h1>CREÁ A TU MEJOR AMIGO</h1>
+          <h1> 🐶 CREATE YOUR DOG</h1>
           <form
             onSubmit={(e) => {
-              onSubmit(e);
+              onSubmit(e);  
             }}
           >
             <p htmlFor="name"> </p>
@@ -105,9 +101,8 @@ export default function AddDog() {
               type="text"
               value={dog.name}
               className={styles.input}
-              placeholder="Raza"
+              placeholder="Name"
             />
-
             {error.name ? <p style={{ color: "red" }}> {error.name} </p> : null}
             <p htmlFor="heightMin"> </p>
             <input
@@ -115,20 +110,21 @@ export default function AddDog() {
               name="heightMin"
               id="heightMin"
               type="number"
+              min="1"
               value={dog.height}
               className={styles.input}
-              placeholder="Altura Mínima"
+              placeholder="Min-Height"
             />
-
             <p htmlFor="heightMax"></p>
             <input
               onChange={(e) => onInputChange(e)}
               name="heightMax"
               id="heightMax"
               type="number"
+              min="1"
               value={dog.height}
               className={styles.input}
-              placeholder="Altura Máxima"
+              placeholder="Max-Height"
             />
             {error.heightMax ? (
               <p style={{ color: "red" }}> {error.heightMax} </p>
@@ -138,18 +134,20 @@ export default function AddDog() {
               onChange={(e) => onInputChange(e)}
               name="weightMin"
               type="number"
+              min="1"
               value={dog.weight}
               className={styles.input}
-              placeholder="Peso Mínimo"
+              placeholder="Min-Weight"
             />
             <p htmlFor=""></p>
             <input
               onChange={(e) => onInputChange(e)}
               name="weightMax"
               type="number"
+              min="1"
               value={dog.weight}
               className={styles.input}
-              placeholder="Peso Máximo"
+              placeholder="Max-Weight"
             />
             {error.weightMax ? (
               <p style={{ color: "red" }}> {error.weightMax} </p>
@@ -159,23 +157,25 @@ export default function AddDog() {
               onChange={(e) => onInputChange(e)}
               name="lifeSpanMin"
               type="number"
+              min="1"
               value={dog.lifeSpan}
               className={styles.input}
-              placeholder="Años de vida min."
+              placeholder="Min-Life-Span"
             />
             <p htmlFor=""></p>
             <input
               onChange={(e) => onInputChange(e)}
               name="lifeSpanMax"
               type="number"
+              min="1"
               value={dog.lifeSpan}
               className={styles.input}
-              placeholder="Años de vida max."
+              placeholder="Max-Life-Span"
             />
             {error.lifeSpanMax ? (
               <p style={{ color: "red" }}> {error.lifeSpanMax} </p>
             ) : null}
-            <p htmlFor="">Temperamentos: </p>
+            <p htmlFor="">Temperaments: </p>
 
             <select
               multiple
@@ -205,10 +205,9 @@ export default function AddDog() {
               type="text"
               value={dog.img}
               className={styles.input}
-              placeholder="Imagen"
+              placeholder="Image URL"
             />
             <br />
-
             <input
               type="submit"
               disabled={Object.keys(error).length === 0 ? false : true}
@@ -216,7 +215,7 @@ export default function AddDog() {
             />
             {Object.keys(error).length === 0 ? null : (
               <p style={{ color: "red" }}>
-                Para crear debes completar todos los campos sin errores.
+                To create you must complete all the fields without errors.
               </p>
             )}
           </form>
