@@ -36,7 +36,9 @@
 } */
 
 .logo {
-  margin-left: 20%;
+  justify-content: center;
+  margin-left: -80px;
+  align-items: center;
   list-style: none;
   height: 40px;
   animation: latidos 1s infinite;

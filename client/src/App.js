@@ -3,7 +3,7 @@ import Dogs from "./components/Dogs/Dogs";
 import LandingPage from "./components/LandingPage/LandingPage";
 import Order from "./components/Order/Order";
 // import SearchBar from "./components/SearchBar/SearchBar";
-import { Switch, Route } from "react-router";
+import {Redirect, Switch, Route } from "react-router";
 import DogDetail from "./components/DogDetail/DogDetail";
 import AddDog from "./components/AddDog/AddDog";
 import NavBar from "./components/NavBar/NavBar";
@@ -24,6 +24,7 @@ function App() {
         </Route>
         <Route exact path="/add" component={AddDog} />
         <Route exact path="/:id" component={DogDetail} />
+        <Redirect to='/home' />
       </Switch>
     </div>
   );

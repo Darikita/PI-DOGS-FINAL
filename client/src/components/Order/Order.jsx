@@ -1,5 +1,4 @@
 import { useDispatch, useSelector } from "react-redux";
-import { ASCENDENTE, DESCENDENTE } from "../../constantes/sort";
 import { sort, sort_weight } from "../../Redux/actions";
 import styles from "./Order.Module.css";
 
@@ -25,7 +24,6 @@ export default function Order() {
         ...e,
       };
     });
-
     // console.log(ordenPeso);
     if (valor === "Weight Ascending") {
       ordenPeso.sort((a, b) => {
@@ -49,8 +47,9 @@ export default function Order() {
           name="select"
           onChange={onSelectChange}
         >
-          <option value={ASCENDENTE}>Name  (A - Z)</option>
-          <option value={DESCENDENTE}>Name  (Z - A)</option>
+          <option disabled selected defaultValue>Alphabetical</option>
+          <option value="asc">Name  (A - Z)</option>
+          <option value="desc">Name  (Z - A)</option>
         </select>
       </div>
       <div>
@@ -59,6 +58,7 @@ export default function Order() {
           name="select"
           onChange={(e) => onSelectChanges(e)}
         >
+          <option disabled selected defaultValue>Weigth...</option>
           <option>Weight Ascending</option>
           <option>Weight Descending</option>
         </select>

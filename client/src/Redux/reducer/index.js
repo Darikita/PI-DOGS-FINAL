@@ -1,4 +1,4 @@
-import { ASCENDENTE } from "../../constantes/sort";
+
 import {
   FETCH_DOGS,
   FETCH_TEMPERAMENTS,
@@ -6,6 +6,8 @@ import {
   SEARCH_DOGS,
   SORT,
   SORT_WEIGHT,
+  POST_DOG
+  
 } from "../../Redux/actions";
 
 const initialState = {
@@ -22,26 +24,28 @@ export default function reducer(state = initialState, action) {
         dogs: action.payload,
         filteredDogs: action.payload,
       };
+
     case FETCH_TEMPERAMENTS:
       const temperaments = action.payload.map((temp) => temp.name);
+        return {
+          ...state,
+          temperaments,
+        };
 
-      return {
-        ...state,
-        temperaments,
-      };
     case SEARCH_DOGS:
       return {
         ...state,
         filteredDogs: action.payload,
       };
+      
     case SORT:
       let orderedDogs = [...state.filteredDogs];
       orderedDogs = orderedDogs.sort((a, b) => {
         if (a.name < b.name) {
-          return action.payload === ASCENDENTE ? -1 : 1;
+          return action.payload === "asc" ? -1 : 1;
         }
         if (a.name > b.name) {
-          return action.payload === ASCENDENTE ? 1 : -1;
+          return action.payload === "desc" ? -1 : 1;
         }
         return 0;
       });
@@ -49,20 +53,26 @@ export default function reducer(state = initialState, action) {
         ...state,
         filteredDogs: orderedDogs,
       };
+
     case SORT_WEIGHT:
       return {
         ...state,
-
         filteredDogs: action.payload,
       };
+
     case FILTER_TEMPERAMENT:
       return {
         ...state,
-
         filteredDogs: action.payload,
+      };
+      
+    case POST_DOG:
+       return {
+          ...state
       };
 
     default:
       return state;
   }
 }
+

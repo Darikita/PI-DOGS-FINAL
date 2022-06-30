@@ -12,7 +12,7 @@ export default function Filter() {
     let fil = dogs.filter((e) => {
       if (!e.temperament) {
         return false;
-      } else if (valor === "Temperamento") {
+      } else if (valor === "Temperament") {
         return e;
       }
       return e.temperament.includes(valor);

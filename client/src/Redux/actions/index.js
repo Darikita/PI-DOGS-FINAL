@@ -6,6 +6,9 @@ export const SORT = "SORT";
 export const SORT_WEIGHT = "SORT_WEIGHT";
 export const FILTER_TEMPERAMENT = "FILTER_TEMPERAMENT";
 export const FETCH_TEMPERAMENTS = "FETCH_TEMPERAMENTS";
+export const POST_DOG = "POST_DOG"
+
+
 
 export function fetchDogs() {
   return function (dispatch) {
@@ -98,4 +101,15 @@ export function filterTemps(temperament) {
     type: FILTER_TEMPERAMENT,
     payload: temperament,
   };
+}
+
+export function postDog(payload){
+  return async function(dispatch){
+      const respuesta = await axios.post("http://localhost:3001/dogs/new", payload);
+      // const rjson = await respuesta.json();
+      return dispatch({
+          type: POST_DOG,
+          payload: respuesta.data
+      });
+  }
 }

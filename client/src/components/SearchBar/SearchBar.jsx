@@ -20,7 +20,7 @@ export default function SearchBar() {
   return (
     <div className={styles.nav}>
         <form className={styles.form} onSubmit={onSubmit}>
-        <input className={styles.input} type='text' placeholder="Search dog..." value={search} onChange={onInputChange}></input>
+        <input className={styles.input} type='text' placeholder="Search breed" value={search} onChange={onInputChange}></input>
         <input className={styles.btn} type='submit' value='🔍'></input>
         </form>
     </div>

@@ -3,7 +3,7 @@ import {useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import Create from "./create.png";
-import { postDog, fetchTemperaments } from "../../Redux/actions";
+import { fetchTemperaments } from "../../Redux/actions";
 import NavBar from "../NavBar/NavBar";
 import styles from "./AddDog.module.css";
 
@@ -81,17 +81,16 @@ export default function AddDog() {
   }
 
 /* Esta función está enviando los datos al servidor. */
-function onSubmit(e) {
-  e.preventDefault();
-  dispatch(postDog(dog)).then(() => {
-    history.push("/");
-  }); 
-  dog
-    ? alert("🐶Dog created successfully")
-    : alert("You must fill in all the values.");
-  // console.log(dog);
-}
-
+  function onSubmit(e) {
+    e.preventDefault();
+    axios.post("http://localhost:3001/dogs/new", dog).then(() => {
+      history.push("/");
+    }); 
+    dog
+      ? alert("🐶Dog created successfully")
+      : alert("You must fill in all the values.");
+    console.log(dog);
+  }
   return (
     <div className={styles.containerPadre}>
       <NavBar />

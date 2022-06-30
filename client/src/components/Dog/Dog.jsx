@@ -27,7 +27,7 @@ export default function Dog({
         <div className={styles.contenido}>
           <div>
             {weightMin && weightMax && !weight ? (
-            <h5> Peso: {weightMin} - {weightMax} kg.</h5>
+            <h5><u>Weight</u>: {weightMin} - {weightMax} kg.</h5>
         ) : (
           <h5><u>Weight</u>: {weight} kg.</h5>
         )}

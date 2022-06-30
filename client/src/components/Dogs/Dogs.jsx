@@ -8,26 +8,20 @@ import Logo2 from "./next.png";
 
 export default function Dogs() {
   let dogs = useSelector((state) => state.filteredDogs);
-  console.log(dogs);
+  // console.log(dogs);
   const [page, setPage] = useState(1);
-  const [PostPage, setPostPage] = useState(8);
-  const PostPagOne = page * PostPage;
-  const firstPostPage = PostPagOne - PostPage;
-  const PostByPage = dogs.slice(firstPostPage, PostPagOne);
+  const [dogsPerPage] = useState(8);
+  const postPagOne = page * dogsPerPage;
+  const firstPostPage = postPagOne - dogsPerPage;
+  const postByPage = dogs.slice(firstPostPage, postPagOne);
   const maxPages = Math.ceil(dogs.length / 8);
-  console.log(PostByPage);
+  // console.log(postByPage);
 
   let dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchDogs());
     dispatch(fetchTemperaments());
   }, []);
-
-  function pageNum(e) {
-    alert(page);
-    document.getElementById("paginas").innerText = `${page}`;
-    setPage(page);
-  }
 
   function anterior() {
     if (page > 1) {
@@ -36,13 +30,16 @@ export default function Dogs() {
     }
   }
   function siguiente() {
-    if (page * PostPage <= dogs.length) {
+    if (page * dogsPerPage <= dogs.length) {
       document.getElementById("paginas").innerText = ` ${page + 1}`;
       setPage(page + 1);
     }
   }
   // console.log(page);
 
+/**
+ * Toma el valor del campo de entrada y establece la página a ese valor
+ */
   const handlePageChange = (e) => {
     document.getElementById("paginas").innerText = ` ${e.target.value}`;
     document.getElementById("unadetantas").innerText = `/${maxPages}`;
@@ -54,7 +51,7 @@ export default function Dogs() {
   return (
     <div className={styles.padre}>
       <div className={styles.carDog}>
-      {!PostByPage.length >0 ? (
+      {!postByPage.length > 0 ? (
         <div className={styles.scanner}>
           <h1>Loading...</h1>
           <img
@@ -62,7 +59,7 @@ export default function Dogs() {
           />
         </div>
       ) :
-        PostByPage.map((e) => {
+        postByPage.map((e) => {
           return (
             <Dog
               key={e.id}

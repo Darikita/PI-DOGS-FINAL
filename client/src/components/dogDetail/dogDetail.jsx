@@ -43,39 +43,40 @@ export default function DogDetail() {
                 />
               </div>
               <div className={styles.tt}>
-                <h1>{dog["0"]["name"]}</h1>
-                {dog["0"]["heightMin"] &&
-                dog["0"]["heightMax"] &&
-                !dog["0"]["height"] ? (
-                  <h5>
-                    Height:{" "}
-                    {`${dog["0"]["heightMin"]} - ${dog["0"]["heightMax"]}`} cm.
+                <h1>🐾{dog[0].name}</h1>
+                {dog[0].heightMin &&
+                dog[0].heightMax &&
+                !dog[0].height ? (
+                  /* Un operador ternario que comprueba si el perro tiene altura Min y altura Max y si
+                  no tiene altura. Si no tiene una altura, mostrará heightMin y heightMax. Si tiene
+                  una altura, mostrará la altura. */
+                  <h5><u>Height</u>:{" "}
+                    {`${dog[0].heightMin} - ${dog[0].heightMax}`} cm.
                   </h5>
                 ) : (
-                  <h5><u>Height</u>: {dog["0"]["height"]} cm.</h5>
+                  <h5><u>Height</u>:{dog[0].height} cm.</h5>
                 )}
-                {dog["0"]["weightMin"] &&
-                dog["0"]["weightMax"] &&
-                !dog["0"]["weight"] ? (
-                  <h5>
-                    Weight:{" "}
-                    {`${dog["0"]["weightMin"]} - ${dog["0"]["weightMax"]}`} kg.
+                {dog[0].weightMin &&
+                dog[0].weightMax &&
+                !dog[0].weight ? (
+                  <h5><u>Weight</u>:{" "}
+                    {`${dog[0].weightMin} - ${dog[0].weightMax}`} kg.
                   </h5>
                 ) : (
-                  <h5><u>Weight</u>: {dog["0"]["weight"]} kg.</h5>
+                  <h5><u>Weight</u>: {dog[0].weight} kg.</h5>
                 )}
-                {dog["0"]["lifeSpanMin"] &&
-                dog["0"]["lifeSpanMax"] &&
-                !dog["0"]["lifeSpan"] ? (
+                {dog[0].lifeSpanMin &&
+                dog[0].lifeSpanMax &&
+                !dog[0].lifeSpan ? (
                   <h5>
-                    Vida Aproximada:{" "}
-                    {`${dog["0"]["lifeSpanMin"]} a ${dog["0"]["lifeSpanMax"]}`}{" "}
-                    años.
+                    <u>Life Span</u>:{" "}
+                    {`${dog[0].lifeSpanMin} a ${dog[0].lifeSpanMax}`}{" "}
+                    years.
                   </h5>
                 ) : (
-                  <h5><u>Life Span</u>: {dog["0"]["lifeSpan"]}.</h5>
+                  <h5><u>Life Span</u>: {dog[0].lifeSpan}.</h5>
                 )}
-                <h5><u>Temperaments</u>: {dog["0"]["temperament"].join(", ")}.</h5>
+                <h5><u>Temperaments</u>: {dog[0].temperament.join(", ")}.</h5>
               </div>
             </div>
           </>
