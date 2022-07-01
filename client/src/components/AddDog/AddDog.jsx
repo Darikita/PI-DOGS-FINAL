@@ -2,7 +2,7 @@ import axios from "axios";
 import {useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import Create from "./create.png";
+import Create from "./create.gif";
 import { postDog, fetchTemperaments } from "../../Redux/actions";
 import NavBar from "../NavBar/NavBar";
 import styles from "./AddDog.module.css";
@@ -14,8 +14,17 @@ export default function AddDog() {
   // console.log(temperaments);
 /* Creando un estado para el objeto perro. */
   const [dog, setDog] = useState({
+    name: "",
+    heightMin: "",
+    heightMax: "",
+    weightMin: "",
+    weightMax: "",
+    lifeSpanMin: "",
+    lifeSpanMax: "",
     temperament: [],
+    img: "",
   });
+
   const [error, setError] = useState({
     error: "You must type a name",
   });
@@ -29,8 +38,8 @@ export default function AddDog() {
 
   function validationForm(value) {
     let errors = {};
-    if (!value.name) errors.name = "🔺Name is required";
-    else if (!/^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/.test(value.name)) {
+    if (!value.name) errors.value = "🔺Name is required";
+   else if (!/^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/.test(value.name)) {
       errors.name = "❌ The first letter must be uppercase";
     }
   /* Esta es una validación que verifica si el valor máximo es menor que el valor mínimo. */
@@ -46,24 +55,23 @@ export default function AddDog() {
     }
  /* Esta es una validación que comprueba si el valor es menor que 1. */
     if (value.temperament.length < 1) {
-      console.log(value.temperament);
+      // console.log(value.temperament);
       errors.temperament = "❌Must select at least one temperament";
     }
-
     return errors;
   }
 /* Agregar el temperamento al objeto del perro. */
-  const onSelectChange = (e) => {
-    setDog({
-      ...dog,
-      temperament: [...dog.temperament, e.target.value],
-    });
-    setError(
-      validationForm({
-        [e.target.name]: e.target.value,
-      })
-    );
-  };
+const handleSelect = (e) => {
+  setDog({
+    ...dog,
+    temperament: [...dog.temperament, e.target.value],
+  });
+  setError(
+    validationForm({
+      [e.target.name]: e.target.value,
+    })
+  );
+};
 /* Esta función está cambiando el estado del objeto perro. */
   function onInputChange(e) {
     e.preventDefault();
@@ -79,29 +87,51 @@ export default function AddDog() {
       })
     );
   }
-
+  function handleDelete(el) {
+    setDog({
+      ...dog,
+      temperament: dog.temperament.filter((e) => e !== el),
+    });
+    console.log(dog);
+  }
 /* Esta función está enviando los datos al servidor. */
-function onSubmit(e) {
+function handleSubmit(e) {
   e.preventDefault();
-  dispatch(postDog(dog)).then(() => {
-    history.push("/");
-  }); 
-  dog
-    ? alert("🐶Dog created successfully")
-    : alert("You must fill in all the values.");
-  // console.log(dog);
-}
-
+  if (
+    dog.name !== "" &&
+    dog.heightMin !== "" &&
+    dog.heightMax > dog.heightMin &&
+    dog.weightMin !== "" &&
+    dog.weightMax > dog.weightMin &&
+    dog.lifeSpanMin !== "" &&
+    dog.weightMax > dog.weightMin &&
+    dog.temperament.length !== 0
+  ){
+    dispatch(postDog(dog));
+    alert("🐶Dog created successfully");
+    setDog({
+      name: "",
+      heightMin: "",
+      heightMax: "",
+      weightMin: "",
+      weightMax: "",
+      lifeSpanMin: "",
+      lifeSpanMax: "",
+      image: "",
+      temperaments: [],
+    });
+    history.push("/home")
+    } else {
+        alert("🚫Required elements are missing!")
+    };
+  }
   return (
     <div className={styles.containerPadre}>
       <NavBar />
       <div className={styles.padre}>
         <div className={styles.container}>
         <img className={styles.create} src={Create} alt="" />
-        
-          <form
-            onSubmit={(e) => {
-              onSubmit(e);  
+          <form onSubmit={(e) => { handleSubmit(e);  
             }}
           >
             <p tag="name"> </p>
@@ -114,7 +144,7 @@ function onSubmit(e) {
               className={styles.input}
               placeholder="Name"
             />
-            {error.name ? <p style={{ color: "red" }}> {error.name} </p> : null}
+            {error.name ? <p className={styles.letter}> {error.name} </p> : null}
 
             <p tag="heightMin"> </p>
             <input
@@ -123,6 +153,7 @@ function onSubmit(e) {
               id="heightMin"
               type="number"
               min="1"
+              max="99"
               value={dog.height}
               className={styles.input}
               placeholder="Min-Height"
@@ -134,12 +165,13 @@ function onSubmit(e) {
               id="heightMax"
               type="number"
               min="1"
+              max="99"
               value={dog.height}
               className={styles.input}
               placeholder="Max-Height"
             />
             {error.heightMax ? (
-              <p style={{ color: "red" }}> {error.heightMax} </p>
+              <p className={styles.letter}> {error.heightMax} </p>
             ) : null}
             <p tag=""></p>
             <input
@@ -147,6 +179,7 @@ function onSubmit(e) {
               name="weightMin"
               type="number"
               min="1"
+              max="99"
               value={dog.weight}
               className={styles.input}
               placeholder="Min-Weight"
@@ -157,12 +190,13 @@ function onSubmit(e) {
               name="weightMax"
               type="number"
               min="1"
+              max="99"
               value={dog.weight}
               className={styles.input}
               placeholder="Max-Weight"
             />
             {error.weightMax ? (
-              <p style={{ color: "red" }}> {error.weightMax} </p>
+              <p className={styles.letter}> {error.weightMax} </p>
             ) : null}
             <p tag=""></p>
             <input
@@ -170,6 +204,7 @@ function onSubmit(e) {
               name="lifeSpanMin"
               type="number"
               min="1"
+              max="20"
               value={dog.lifeSpan}
               className={styles.input}
               placeholder="Min-Life-Span"
@@ -180,18 +215,19 @@ function onSubmit(e) {
               name="lifeSpanMax"
               type="number"
               min="1"
+              max="20"
               value={dog.lifeSpan}
               className={styles.input}
               placeholder="Max-Life-Span"
             />
             {error.lifeSpanMax ? (
-              <p style={{ color: "red" }}> {error.lifeSpanMax} </p>
+              <p className={styles.letter}> {error.lifeSpanMax} </p>
             ) : null}
 
-            <p tag="">✔️Select Temperaments: </p>
+            <p className={styles.letter}>✔️Select Temperaments: </p>
             <select
               className={styles.selectT}
-              onChange={(e) => onSelectChange(e)}
+              onChange={(e) => handleSelect(e)}
               name="temperament"
             >
               {temperaments.map((e, i) => (
@@ -200,14 +236,22 @@ function onSubmit(e) {
                 </option>
               ))}
             </select>
-
-            {dog.temperament.length > 0 ? (
-              <div className={styles.temperPadre}>
-                <p className={styles.temper}>{dog.temperament.join(", ")}.</p>
-              </div>
-            ) : null}
+            <ul className={styles.ul}>
+            <li className={styles.li} key={"key"}>
+              {dog.temperament.map((el) => (
+                <button
+                  className={styles.botonTemp}
+                  type="button"
+                  key={el.id}
+                  onClick={() => handleDelete(el)}
+                >
+                  {el} X
+                </button>
+              ))}
+            </li>
+          </ul>
             {error.temperament ? (
-              <p style={{ color: "red" }}> {error.temperament} </p>
+              <p className={styles.letter}> {error.temperament} </p>
             ) : null}
             <p tag=""></p>
             <input
@@ -216,16 +260,19 @@ function onSubmit(e) {
               type="text"
               value={dog.img}
               className={styles.input}
-              placeholder="Image URL"
+              placeholder="Image URL"S
             />
             <br />
-            <input
-              type="submit"
-              disabled={Object.keys(error).length === 0 ? false : true}
-              className={styles.inputEnviar}
-            />
+            <div className={styles.but}>
+            <button type="submit">
+            <span class="text">CREATE</span>
+        </button>
+        {/* <Link to="/home">
+        <button> Back to home</button>
+      </Link> */}
+      </div>
             {Object.keys(error).length === 0 ? null : (
-              <p style={{ color: "black" }}>
+              <p className={styles.danger}>
                 ⚠️To create you must complete all the fields without errors.
               </p>
             )}

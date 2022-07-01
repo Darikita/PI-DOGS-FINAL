@@ -77,7 +77,7 @@ export function searchDogs(name) {
         });
       })
       .catch(() => {
-        alert("Dog not found!")
+        alert("⛔Dog not found!⛔")
       });
   };
 }

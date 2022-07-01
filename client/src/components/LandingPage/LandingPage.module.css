@@ -66,11 +66,10 @@ h4 span:nth-child(13){ animation-delay:.6s; }
 h4 span:nth-child(14){ animation-delay:.65s; }
 
 .btn {
-
   border-radius: 4px;
-  background-color: #342d2a;
+  background-color:rgb(67, 67, 67);
   border: none;
-  color: #ffffff;
+  color: #e88078;
   text-align: center;
   font-size: 28px;
   padding: 20px;
@@ -95,5 +94,5 @@ h4 span:nth-child(14){ animation-delay:.65s; }
   background-color:hsl(30, 64%, 63%);
   transform: scale(1.1);
   cursor: pointer;
-  color:black
+  color:rgb(67, 67, 67);
 }
