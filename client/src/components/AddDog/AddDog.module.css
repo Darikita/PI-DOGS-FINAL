@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Jua&family=Mali&display=swap');
 
-
 .containerPadre {
   font-family: 'Jua', sans-serif;
 }
@@ -27,13 +26,12 @@
 
 .padre {
   display: flex;
-  justify-content: center;
-  
-  
+  justify-content: center; 
 }
 
 .input {
   width: 180px;
+  height: 12px;
   font-weight: 800;
   display: inline-block;
   padding: 10px 20px 10px 17px;
@@ -73,10 +71,12 @@
   left: 0;
   border-radius: 50px;
 }
+
 .inputEnviar:hover {
   background-color:  #e88078; 
   color: #686065;
 }
+
 .inputEnviar:active {
   top: 2px;
 }
@@ -117,14 +117,17 @@
   -o-transition: all 200ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
   transition: all 200ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
 }
+
 .selectT{
  font-weight: 800;
  width: 65%;
  padding: 10px;
 }
+
 .create{
   margin-left: 15px;
 }
+
 .temp{
   font-weight: 800;
   display: flex;
@@ -147,12 +150,13 @@
   -moz-transition: all 200ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
   -o-transition: all 200ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
   transition: all 200ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
-
 }
+
 .form{
   position: fixed;
   height: 700px;
 }
+
 .botonTemp { 
   width:fit-content;
   background-color: rgb(85, 82, 82);
@@ -173,11 +177,12 @@
   cursor: pointer;
   color: rgb(85, 82, 82);
 }
+
 .but button {
   font-family: 'Mali', cursive;
   padding: 10px 20px;
   border: unset;
-  margin-right: 20px;
+  margin-right: 0px;
   margin-top:8px;
   border-radius: 15px;
   color: #e8e8e8;
@@ -192,7 +197,8 @@
   overflow: hidden;
   cursor: pointer;
  }
- .li {   
+
+.li {   
   list-style: none;
 }
  
@@ -218,10 +224,12 @@
  .but  button:hover::before {
   width: 100%;
  }
+
  .danger{
   color:rgb(67, 67, 67);;
   margin-top:10px
  }
+ 
  .letter{
   color:rgb(67, 67, 67);
  }

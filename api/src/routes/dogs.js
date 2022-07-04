@@ -59,7 +59,7 @@ router.post("/new", async (req, res) => {
       weightMax,
       lifeSpanMin,
       lifeSpanMax,
-      img,
+      img:img ? img : "https://i.pinimg.com/originals/6b/52/bc/6b52bcbea6969ef1965dd775e424fc53.gif"
     });
 
     let temperamentDB = await Temperament.findAll({

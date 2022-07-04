@@ -32,14 +32,16 @@
   color:rgb(49, 48, 48)
 }
 .tt h1{
+  /* -webkit-text-stroke: 1px rgb(130, 130, 130); */
+  font-weight: 550;
   color:#e88078;
-  text-shadow: 0 0 3px rgb(49, 48, 48);
+  text-shadow: 0 0 5px rgb(49, 48, 48); 
   font-family: 'Jua', sans-serif;
   font-size:35px;
 }
 .imagen {
   object-fit: contain;
-  display: flex;
+  display: flex;  
   width: 520px;
   height: 510px;
   border-radius: 20px;
@@ -48,16 +50,6 @@
 
 .card {
   margin-top:5%; 
-  /* background: rgba(255, 255, 255, 0.315);
-  backdrop-filter: blur(20px);
-  -webkit-box-shadow: 7px 10px 21px 1px rgb(132, 118, 118);
-  -moz-box-shadow: 7px 10px 21px 1px rgb(180, 153, 153);
-  box-shadow: 7px 10px 21px 1px rgb(78, 72, 72);
-  border-radius: 20px;
-  width: 500px;
-  height:480px;
-  padding: 10px;
-  border-radius: 20px; */ 
   display: flex;
   flex-direction: column;
   align-items: center;

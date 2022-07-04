@@ -1,7 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&family=Mali&display=swap');
 
-.padre {
-  font-family: "Merriweather Sans", sans-serif;
-}
 .carDog {
   display: flex;
   flex-wrap: wrap;
@@ -9,35 +7,36 @@
 }
 
 .containerPag {
+  font-family: 'jua', cursive;
   margin-bottom: 20px;
   display: flex;
   flex-wrap: wrap;
   align-content: stretch;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
-  
+  align-items: center; 
 }
 
 .countPag {
-  color: black;
+  font-family: 'jua', cursive;
+  color: rgb(70, 69, 69);
   /* background-color: hsl(340deg 61% 44%); */
   padding: 7px 14px;
   border-color: rgb(2, 2, 2);
-  width: 10px;
+  width: 20px;
   height: 20px;
   border-radius: 10px;
   border: 1px solid #979797;
 }
 .countPag2{
   margin-right: 10px;
-  color: black;
+  color: rgb(70, 69, 69);
   /* background-color: hsl(340deg 61% 44%); */
-  padding: 7px 10px;
-
-  width: 30px;
+  padding: 5px 15px;
+  width: 35px;
   height: 20px;
   border-radius: 10px;
+  margin-top:-0.5%;
 
 }
 .botonAnterior {
@@ -50,14 +49,7 @@
   background: #ffffff;
   /* z-index: 1; */
 }
-/* .botonAnterior:hover:after {
-  width: 100%;
-  left: 0;
-  border-radius: 50px;
-}
-.botonAnterior:hover {
-  background-color: #ffe566;
-} */
+
 .botonAnterior:active {
   top: 2px;
 }
@@ -71,7 +63,8 @@
   border: none;
   background: #ffffff;
   z-index: 1;
-  margin-right:20px;
+  margin-left: -0.5%;
+  margin-right:0px;
 }
 
 .botonSiguiente:active {
@@ -79,11 +72,12 @@
 }
 
 .input {
+  width:50px;
   display: inline-block;
-  padding: 10px 20px 10px 17px;
+  padding: 10px 10px 10px 10px;
   border: 2px solid   #e88078;
-  border-radius: 20px 3px;
-  font-family: "Merriweather Sans", sans-serif;
+  border-radius: 10px 10px;
+  font-family: 'jua', cursive;
   font-size: 15px;
   color: rgb(0, 9, 59);
   background: rgba(255, 255, 255, 1);
@@ -92,8 +86,7 @@
 .logo {
   margin-top: -15%;
   margin-left:-20%;
-  list-style: none;
-  height: 60px;
+  list-style: none;  height: 60px;
  
 }
 .logo2 {
@@ -110,7 +103,6 @@
   position: relative;
   overflow: hidden;
  }
- 
  .scanner h1::before {
   content: "Loading...";
   font-family: 'Jua', sans-serif;

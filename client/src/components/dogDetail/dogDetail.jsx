@@ -43,7 +43,7 @@ export default function DogDetail() {
                 />
               </div>
               <div className={styles.tt}>
-                <h1>🐾{dog[0].name}</h1>
+                <h1>{dog[0].name}</h1>
                 {dog[0].heightMin &&
                 dog[0].heightMax &&
                 !dog[0].height ? (
@@ -54,12 +54,12 @@ export default function DogDetail() {
                     {`${dog[0].heightMin} - ${dog[0].heightMax}`} cm.
                   </h5>
                 ) : (
-                  <h5><u>Height</u>:{dog[0].height} cm.</h5>
+                  <h5><u>Height</u>: {dog[0].height} cm.</h5>
                 )}
                 {dog[0].weightMin &&
                 dog[0].weightMax &&
                 !dog[0].weight ? (
-                  <h5><u>Weight</u>:{" "}
+                  <h5><u>Weight</u>: {" "}
                     {`${dog[0].weightMin} - ${dog[0].weightMax}`} kg.
                   </h5>
                 ) : (

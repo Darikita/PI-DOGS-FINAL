@@ -12,7 +12,6 @@ import styles from "./AddDog.module.css";
 export default function AddDog() {
   let temperaments = useSelector((state) => state.temperaments);
   // console.log(temperaments);
-/* Creando un estado para el objeto perro. */
   const [dog, setDog] = useState({
     name: "",
     heightMin: "",
@@ -24,14 +23,12 @@ export default function AddDog() {
     temperament: [],
     img: "",
   });
-
   const [error, setError] = useState({
-    error: "You must type a name",
+    error: "",
   });
-  /* Un gancho que nos permite usar el historial del navegador y el envío de la tienda redux. */
   let history = useHistory();
   let dispatch = useDispatch();
-/* Este es un gancho que nos permite usar el envío de la tienda redux. */
+
   useEffect(() => {
     dispatch(fetchTemperaments());
   }, [dispatch]);
@@ -39,21 +36,26 @@ export default function AddDog() {
   function validationForm(value) {
     let errors = {};
     if (!value.name) errors.value = "🔺Name is required";
-   else if (!/^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/.test(value.name)) {
+    else if (!/^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/.test(value.name)) {
       errors.name = "❌ The first letter must be uppercase";
     }
   /* Esta es una validación que verifica si el valor máximo es menor que el valor mínimo. */
+    if (value.heightMin<0||value.heightMin>98){errors.heightMin= "❌ Min value is 1";
+    }
     if (parseInt(value.heightMax) <= parseInt(value.heightMin)) {
       errors.heightMax = "❌ Min value cannot be greater than the max";
     }
+    if (value.weightMin<0||value.weightMin>98){errors.weightMin= "❌ Min value is 1";
+    }
     if (parseInt(value.weightMax) <= parseInt(value.weightMin)) {
       errors.weightMax = "❌ Min value cannot be greater than the max";
+    }
+    if (value.lifeSpanMin<0||value.lifeSpanMin>98){errors.lifeSpanMin= "❌ Min value is 1";
     }
     if (parseInt(value.lifeSpanMax) <= parseInt(value.lifeSpanMin)) {
       errors.lifeSpanMax =
         "❌ Min value cannot be greater than the max";
     }
- /* Esta es una validación que comprueba si el valor es menor que 1. */
     if (value.temperament.length < 1) {
       // console.log(value.temperament);
       errors.temperament = "❌Must select at least one temperament";
@@ -72,14 +74,15 @@ const handleSelect = (e) => {
     })
   );
 };
-/* Esta función está cambiando el estado del objeto perro. */
+
   function onInputChange(e) {
     e.preventDefault();
     setDog({
       ...dog,
       [e.target.name]: e.target.value,
     });
-
+    
+/* Esta es una validación que comprueba si el valor es menor que 1. */
     setError(
       validationForm({
         ...dog,
@@ -98,14 +101,7 @@ const handleSelect = (e) => {
 function handleSubmit(e) {
   e.preventDefault();
   if (
-    dog.name !== "" &&
-    dog.heightMin !== "" &&
-    dog.heightMax > dog.heightMin &&
-    dog.weightMin !== "" &&
-    dog.weightMax > dog.weightMin &&
-    dog.lifeSpanMin !== "" &&
-    dog.weightMax > dog.weightMin &&
-    dog.temperament.length !== 0
+    Object.keys(error).length === 0 
   ){
     dispatch(postDog(dog));
     alert("🐶Dog created successfully");
@@ -132,7 +128,7 @@ function handleSubmit(e) {
         <div className={styles.container}>
         <img className={styles.create} src={Create} alt="" />
           <form onSubmit={(e) => { handleSubmit(e);  
-            }}
+          }}
           >
             <p tag="name"> </p>
             <input
@@ -158,6 +154,8 @@ function handleSubmit(e) {
               className={styles.input}
               placeholder="Min-Height"
             />
+            {error.heightMin ? ( <p className={styles.letter}> {error.heightMin} </p>) : null}
+            
             <p tag="heightMax"></p>
             <input
               onChange={(e) => onInputChange(e)}
@@ -170,9 +168,8 @@ function handleSubmit(e) {
               className={styles.input}
               placeholder="Max-Height"
             />
-            {error.heightMax ? (
-              <p className={styles.letter}> {error.heightMax} </p>
-            ) : null}
+            {error.heightMax ? ( <p className={styles.letter}> {error.heightMax} </p>) : null}
+            
             <p tag=""></p>
             <input
               onChange={(e) => onInputChange(e)}
@@ -184,6 +181,7 @@ function handleSubmit(e) {
               className={styles.input}
               placeholder="Min-Weight"
             />
+            {error.weightMin ? ( <p className={styles.letter}> {error.weightMin} </p>) : null} 
             <p tag=""></p>
             <input
               onChange={(e) => onInputChange(e)}
@@ -195,9 +193,8 @@ function handleSubmit(e) {
               className={styles.input}
               placeholder="Max-Weight"
             />
-            {error.weightMax ? (
-              <p className={styles.letter}> {error.weightMax} </p>
-            ) : null}
+            {error.weightMax ? (<p className={styles.letter}> {error.weightMax} </p>) : null}
+            
             <p tag=""></p>
             <input
               onChange={(e) => onInputChange(e)}
@@ -209,6 +206,7 @@ function handleSubmit(e) {
               className={styles.input}
               placeholder="Min-Life-Span"
             />
+             {error.lifeSpanMin ? ( <p className={styles.letter}> {error.lifeSpanMin} </p>) : null}
             <p tag=""></p>
             <input
               onChange={(e) => onInputChange(e)}
@@ -220,9 +218,7 @@ function handleSubmit(e) {
               className={styles.input}
               placeholder="Max-Life-Span"
             />
-            {error.lifeSpanMax ? (
-              <p className={styles.letter}> {error.lifeSpanMax} </p>
-            ) : null}
+            {error.lifeSpanMax ? ( <p className={styles.letter}> {error.lifeSpanMax} </p>) : null}
 
             <p className={styles.letter}>✔️Select Temperaments: </p>
             <select
@@ -230,11 +226,12 @@ function handleSubmit(e) {
               onChange={(e) => handleSelect(e)}
               name="temperament"
             >
-              {temperaments.map((e, i) => (
+            {temperaments.map((e, i) => (
                 <option value={e} key={i}>
                   {e}
                 </option>
               ))}
+              <option disabled selected defaultValue>Temperament:</option>
             </select>
             <ul className={styles.ul}>
             <li className={styles.li} key={"key"}>
@@ -244,15 +241,12 @@ function handleSubmit(e) {
                   type="button"
                   key={el.id}
                   onClick={() => handleDelete(el)}
-                >
-                  {el} X
+                > {el} X
                 </button>
               ))}
             </li>
           </ul>
-            {error.temperament ? (
-              <p className={styles.letter}> {error.temperament} </p>
-            ) : null}
+            {error.temperament ? (<p className={styles.letter}> {error.temperament} </p>) : null}
             <p tag=""></p>
             <input
               onChange={(e) => onInputChange(e)}
@@ -260,16 +254,13 @@ function handleSubmit(e) {
               type="text"
               value={dog.img}
               className={styles.input}
-              placeholder="Image URL"S
+              placeholder="Image URL"
             />
             <br />
             <div className={styles.but}>
             <button type="submit">
             <span class="text">CREATE</span>
         </button>
-        {/* <Link to="/home">
-        <button> Back to home</button>
-      </Link> */}
       </div>
             {Object.keys(error).length === 0 ? null : (
               <p className={styles.danger}>

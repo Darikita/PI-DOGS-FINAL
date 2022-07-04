@@ -51,14 +51,7 @@ export default function Dogs() {
   return (
     <div className={styles.padre}>
       <div className={styles.carDog}>
-      {!postByPage.length > 0 ? (
-        <div className={styles.scanner}>
-          <h1>Loading...</h1>
-          <img
-            src={"https://i.gifer.com/7Jfa.gif"}
-          />
-        </div>
-      ) :
+      {
         postByPage.map((e) => {
           return (
             <Dog
