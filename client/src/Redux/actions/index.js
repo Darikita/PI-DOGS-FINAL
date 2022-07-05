@@ -1,5 +1,4 @@
 import axios from "axios";
-// import { bindActionCreators } from "redux";
 export const FETCH_DOGS = "FETCH_DOGS";
 export const SEARCH_DOGS = "SEARCH_DOGS";
 export const SORT = "SORT";
@@ -8,7 +7,6 @@ export const FILTER_TEMPERAMENT = "FILTER_TEMPERAMENT";
 export const FETCH_TEMPERAMENTS = "FETCH_TEMPERAMENTS";
 export const POST_DOG = "POST_DOG"
 export const GET_DETAILS_DOG = "GET_DETAILS_DOG"
-
 
 
 export function fetchDogs() {
@@ -82,6 +80,7 @@ export function searchDogs(name) {
       });
   };
 }
+
 export function getDetailsDogs(id){
   return function(dispatch){
       axios.get("http://localhost:3001/dogs/" + id)
@@ -118,7 +117,6 @@ export function filterTemps(temperament) {
 export function postDog(payload){
   return async function(dispatch){
       const respuesta = await axios.post("http://localhost:3001/dogs/new", payload);
-      // const rjson = await respuesta.json();
       return dispatch({
           type: POST_DOG,
           payload: respuesta.data

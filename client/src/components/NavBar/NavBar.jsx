@@ -4,11 +4,13 @@ import styles from "./NavBar.module.css";
 import Logo from "../LandingPage/dogs-logo.png";
 import SearchBar from "../SearchBar/SearchBar";
 
+
 export default function NavBar() {
   return (
     <header className={styles.container}>
       <SearchBar></SearchBar>
       <NavLink className={styles.navLogo} to="/home">
+        
         <li>
           <img className={styles.logo} src={Logo} alt="" />
         </li>

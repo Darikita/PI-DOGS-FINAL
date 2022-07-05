@@ -37,9 +37,6 @@ export default function Dogs() {
   }
   // console.log(page);
 
-/**
- * Toma el valor del campo de entrada y establece la página a ese valor
- */
   const handlePageChange = (e) => {
     document.getElementById("paginas").innerText = ` ${e.target.value}`;
     document.getElementById("unadetantas").innerText = `/${maxPages}`;

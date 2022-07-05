@@ -22,7 +22,7 @@ export default function Dog({
   return (
     <div className={styles.card}>
       <Link to={`/${id}`}>
-      <img className={styles.imagen} src={img} alt="imagen" />
+      <img className={styles.imagen} src={img} alt="image" />
         <h4 className={styles.name}>{name}</h4>
         <div className={styles.contenido}>
           <div>

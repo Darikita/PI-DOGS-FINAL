@@ -28,9 +28,9 @@ export default function Filter() {
       } else if (valor === "All") {
         return e;
       } else if (valor === "Existing") {
-        return !e.createdAt;
+        return !e.createdInDb;
       } else if (valor === "Created") {
-        return e.createdAt;
+        return e.createdInDb;
       }
     });
     dispatch(filterTemps(filtro));

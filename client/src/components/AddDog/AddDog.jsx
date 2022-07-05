@@ -4,12 +4,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory, NavLink } from "react-router-dom";
 import Create from "./create.gif";
 import { postDog, fetchTemperaments } from "../../Redux/actions";
-import NavBar from "../NavBar/NavBar";
 import styles from "./AddDog.module.css";
 import Logo from "../LandingPage/dogs-logo.png";
 
-
-/* Esta es una función que exporta el componente AddDog. */
 
 export default function AddDog() {
   let temperaments = useSelector((state) => state.temperaments);
@@ -41,7 +38,6 @@ export default function AddDog() {
     else if (!/^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/.test(value.name)) {
       errors.name = "❌ The first letter must be uppercase";
     }
-  /* Esta es una validación que verifica si el valor máximo es menor que el valor mínimo. */
     if (value.heightMin<0||value.heightMin>98){errors.heightMin= "❌ Min value is 1";
     }
     if (parseInt(value.heightMax) <= parseInt(value.heightMin)) {
@@ -64,7 +60,7 @@ export default function AddDog() {
     }
     return errors;
   }
-/* Agregar el temperamento al objeto del perro. */
+
 const handleSelect = (e) => {
   setDog({
     ...dog,
@@ -84,7 +80,6 @@ const handleSelect = (e) => {
       [e.target.name]: e.target.value,
     });
     
-/* Esta es una validación que comprueba si el valor es menor que 1. */
     setError(
       validationForm({
         ...dog,
@@ -99,7 +94,7 @@ const handleSelect = (e) => {
     });
     console.log(dog);
   }
-/* Esta función está enviando los datos al servidor. */
+
 function handleSubmit(e) {
   e.preventDefault();
     if (
@@ -133,7 +128,6 @@ function handleSubmit(e) {
   }
   return (
     <div className={styles.containerPadre}>
-      {/* <NavBar /> */}
       <NavLink className={styles.navLogo} to="/home">
         <li>
           <img className={styles.logo} src={Logo} alt="" />
