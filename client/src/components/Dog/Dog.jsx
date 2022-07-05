@@ -13,9 +13,9 @@ export default function Dog({
 }) {
   function renderTemperaments(temperament) {
     if (temperament) {
-      return temperament.join(", ");
+      return temperament.join(" ◻️ ");
     } else if (temperaments) {
-      return temperaments.join(", ");
+      return temperaments.join(" ◻️ ");
     }
     return "Este error";
   }

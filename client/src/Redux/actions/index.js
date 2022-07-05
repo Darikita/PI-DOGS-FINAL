@@ -7,6 +7,7 @@ export const SORT_WEIGHT = "SORT_WEIGHT";
 export const FILTER_TEMPERAMENT = "FILTER_TEMPERAMENT";
 export const FETCH_TEMPERAMENTS = "FETCH_TEMPERAMENTS";
 export const POST_DOG = "POST_DOG"
+export const GET_DETAILS_DOG = "GET_DETAILS_DOG"
 
 
 
@@ -80,6 +81,17 @@ export function searchDogs(name) {
         alert("⛔Dog not found!⛔")
       });
   };
+}
+export function getDetailsDogs(id){
+  return function(dispatch){
+      axios.get("http://localhost:3001/dogs/" + id)
+      .then((response)=>{
+          dispatch({type:GET_DETAILS_DOG, payload: response.data})
+      })
+      .catch(()=>{
+          console.log('No se encuentra Id');
+      })
+  }
 }
 
 export function sort(order) {

@@ -28,6 +28,8 @@
   object-fit: cover;
   margin-top: -10px;
   margin-left: -10px;
+  object-position: 35% 15%;
+  
 }
 .card {
   -webkit-box-shadow: 8px 8px 8px 0px rgba(176,176,176,0.78);
@@ -42,9 +44,10 @@
   background-color: #e0d8db;
 }
 .card:hover {
+  border-radius: 20px;
   transform: scale(1.1);
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
-  border-color: 2px solid#e88078;
+  /* border: 2px solid  #e88078; */
 }
 
 .card a {

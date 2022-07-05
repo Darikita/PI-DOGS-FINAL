@@ -40,12 +40,12 @@
   font-size:35px;
 }
 .imagen {
-  object-fit: contain;
   display: flex;  
   width: 520px;
   height: 510px;
   border-radius: 20px;
   object-fit: cover;
+  /* object-position: 15% 15%; */
 }
 
 .card {

@@ -6,7 +6,8 @@ import {
   SEARCH_DOGS,
   SORT,
   SORT_WEIGHT,
-  POST_DOG
+  POST_DOG,
+  GET_DETAILS_DOG
   
 } from "../../Redux/actions";
 
@@ -14,6 +15,8 @@ const initialState = {
   dogs: [],
   filteredDogs: [],
   temperaments: [],
+  dogsDetails: [],
+
 };
 
 export default function reducer(state = initialState, action) {
@@ -59,6 +62,12 @@ export default function reducer(state = initialState, action) {
         ...state,
         filteredDogs: action.payload,
       };
+      
+      case GET_DETAILS_DOG:
+            return {
+                ...state,
+                dogsDetails: action.payload
+            }
 
     case FILTER_TEMPERAMENT:
       return {

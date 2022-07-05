@@ -1,11 +1,13 @@
 import axios from "axios";
 import {useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useHistory, NavLink } from "react-router-dom";
 import Create from "./create.gif";
 import { postDog, fetchTemperaments } from "../../Redux/actions";
 import NavBar from "../NavBar/NavBar";
 import styles from "./AddDog.module.css";
+import Logo from "../LandingPage/dogs-logo.png";
+
 
 /* Esta es una función que exporta el componente AddDog. */
 
@@ -50,7 +52,7 @@ export default function AddDog() {
     if (parseInt(value.weightMax) <= parseInt(value.weightMin)) {
       errors.weightMax = "❌ Min value cannot be greater than the max";
     }
-    if (value.lifeSpanMin<0||value.lifeSpanMin>98){errors.lifeSpanMin= "❌ Min value is 1";
+    if (value.lifeSpanMin<0||value.lifeSpanMin>20){errors.lifeSpanMin= "❌ Min value is 1";
     }
     if (parseInt(value.lifeSpanMax) <= parseInt(value.lifeSpanMin)) {
       errors.lifeSpanMax =
@@ -100,8 +102,16 @@ const handleSelect = (e) => {
 /* Esta función está enviando los datos al servidor. */
 function handleSubmit(e) {
   e.preventDefault();
-  if (
-    Object.keys(error).length === 0 
+    if (
+      dog.name !== "" &&
+      dog.heightMin !== "" &&
+      dog.heightMax > dog.heightMin &&
+      dog.weightMin !== "" &&
+      dog.weightMax > dog.weightMin &&
+      dog.lifeSpanMin !== "" &&
+      dog.weightMax > dog.weightMin &&
+      dog.temperament.length !== 0
+    // Object.keys(error).length === 0 
   ){
     dispatch(postDog(dog));
     alert("🐶Dog created successfully");
@@ -113,7 +123,7 @@ function handleSubmit(e) {
       weightMax: "",
       lifeSpanMin: "",
       lifeSpanMax: "",
-      image: "",
+      img: "",
       temperaments: [],
     });
     history.push("/home")
@@ -123,7 +133,12 @@ function handleSubmit(e) {
   }
   return (
     <div className={styles.containerPadre}>
-      <NavBar />
+      {/* <NavBar /> */}
+      <NavLink className={styles.navLogo} to="/home">
+        <li>
+          <img className={styles.logo} src={Logo} alt="" />
+        </li>
+      </NavLink>
       <div className={styles.padre}>
         <div className={styles.container}>
         <img className={styles.create} src={Create} alt="" />
@@ -148,8 +163,6 @@ function handleSubmit(e) {
               name="heightMin"
               id="heightMin"
               type="number"
-              min="1"
-              max="99"
               value={dog.height}
               className={styles.input}
               placeholder="Min-Height"
@@ -175,8 +188,6 @@ function handleSubmit(e) {
               onChange={(e) => onInputChange(e)}
               name="weightMin"
               type="number"
-              min="1"
-              max="99"
               value={dog.weight}
               className={styles.input}
               placeholder="Min-Weight"
@@ -187,8 +198,6 @@ function handleSubmit(e) {
               onChange={(e) => onInputChange(e)}
               name="weightMax"
               type="number"
-              min="1"
-              max="99"
               value={dog.weight}
               className={styles.input}
               placeholder="Max-Weight"
@@ -200,8 +209,6 @@ function handleSubmit(e) {
               onChange={(e) => onInputChange(e)}
               name="lifeSpanMin"
               type="number"
-              min="1"
-              max="20"
               value={dog.lifeSpan}
               className={styles.input}
               placeholder="Min-Life-Span"
@@ -212,8 +219,6 @@ function handleSubmit(e) {
               onChange={(e) => onInputChange(e)}
               name="lifeSpanMax"
               type="number"
-              min="1"
-              max="20"
               value={dog.lifeSpan}
               className={styles.input}
               placeholder="Max-Life-Span"

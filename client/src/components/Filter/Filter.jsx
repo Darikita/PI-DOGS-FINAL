@@ -50,7 +50,7 @@ export default function Filter() {
           ))}
         </select>
         <select className={styles.selectABD} onChange={(e) => onChange(e)}>
-          <option>Existing & Created</option>
+        <option disabled selected defaultValue>Existing & Created</option>
           <option>All</option>
           <option>Existing</option>
           <option>Created</option>

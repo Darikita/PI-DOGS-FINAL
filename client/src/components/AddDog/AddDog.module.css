@@ -6,9 +6,11 @@
 
 .container {
   position: fixed;
-  background-color: #e1d6d6;
+  /* background-color: #e1d6d6; */
+  background-image:url("../NavBar/fondo\ nav.png");
   display: flex;
   flex-direction: row;
+  
   /* border: 2px solid  #e88078;  */
   font-size: 18px;
   margin-top: 50px;
@@ -233,3 +235,23 @@
  .letter{
   color:rgb(67, 67, 67);
  }
+ .logo {
+margin-top: 30px;
+  justify-content: center;
+  /* margin-left: -30px; */
+  align-items: center;
+  list-style: none;
+  height: 40px;
+  animation: latidos 1s infinite;
+	transform-origin: center;
+}
+@keyframes latidos {
+  from { transform: none; }
+  50% { transform: scale(1.07); }
+  to { transform: none; }
+}
+
+.navLogo {
+  list-style: none;
+  text-decoration: none;
+}
