@@ -1,8 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
 import { filterTemps } from "../../Redux/actions";
 import styles from "./Filter.Module.css";
+import Dogs from "../Dogs/Dogs";
 
 export default function Filter() {
+
   let dispatch = useDispatch();
   let { dogs, temperaments } = useSelector((state) => state);
 

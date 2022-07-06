@@ -128,6 +128,7 @@ function handleSubmit(e) {
   }
   return (
     <div className={styles.containerPadre}>
+
       <NavLink className={styles.navLogo} to="/home">
         <li>
           <img className={styles.logo} src={Logo} alt="" />
