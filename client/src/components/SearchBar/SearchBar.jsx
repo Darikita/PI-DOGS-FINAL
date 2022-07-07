@@ -3,7 +3,6 @@ import { useDispatch } from "react-redux";
 import { searchDogs } from "../../Redux/actions";
 import styles from "./SearchBar.module.css";
 
-
 export default function SearchBar() {
   const [search, setSearch] = useState("");
   let dispatch = useDispatch();

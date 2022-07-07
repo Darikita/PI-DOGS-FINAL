@@ -138,3 +138,7 @@
    width: 100%;
   }
  }
+ .orderyFilter {
+  display: flex;
+  justify-content: center;
+}

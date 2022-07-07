@@ -1,10 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
 import { filterTemps } from "../../Redux/actions";
 import styles from "./Filter.Module.css";
-import Dogs from "../Dogs/Dogs";
 
-export default function Filter() {
-
+export default function Filter({setPage}) {
+ 
   let dispatch = useDispatch();
   let { dogs, temperaments } = useSelector((state) => state);
 
@@ -20,6 +19,7 @@ export default function Filter() {
       return e.temperament.includes(valor);
     });
     dispatch(filterTemps(fil));
+    setPage(1);
   };
   const onChange = (e) => {
     e.preventDefault();
@@ -36,12 +36,13 @@ export default function Filter() {
       }
     });
     dispatch(filterTemps(filtro));
+    setPage(1);
   };
   return (
     <div className={styles.containerFilter}>
       <div>
         Filter by:
-        <select
+        <select 
           className={styles.selectT}
           name="select"
           onChange={(e) => cambio(e)}
@@ -51,6 +52,7 @@ export default function Filter() {
             <option key={i}>{e}</option>
           ))}
         </select>
+        
         <select className={styles.selectABD} onChange={(e) => onChange(e)}>
         <option disabled selected defaultValue>Existing & Created</option>
           <option>All</option>
@@ -59,5 +61,6 @@ export default function Filter() {
         </select>
       </div>
     </div>
+
   );
 }

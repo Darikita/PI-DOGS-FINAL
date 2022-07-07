@@ -5,22 +5,22 @@ import Dog from "../Dog/Dog";
 import styles from "./Dogs.module.css";
 import Logo from "./previous.png";
 import Logo2 from "./next.png";
+import Filter from "../Filter/Filter";
+import Order from "../Order/Order";
 
 export default function Dogs() {
   let dogs = useSelector((state) => state.filteredDogs);
-  // console.log(dogs);
   const [page, setPage] = useState(1);
   const [dogsPerPage] = useState(8);
   const postPagOne = page * dogsPerPage;
   const firstPostPage = postPagOne - dogsPerPage;
   const postByPage = dogs.slice(firstPostPage, postPagOne);
   const maxPages = Math.ceil(dogs.length / 8);
-  // console.log(postByPage);
 
   let dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchDogs());
     dispatch(fetchTemperaments());
+    if(!dogs.length)dispatch(fetchDogs());
   }, []);
 
   function anterior() {
@@ -35,21 +35,19 @@ export default function Dogs() {
       setPage(page + 1);
     }
   }
-  // console.log(page);
 
-/**
- * Toma el valor del campo de entrada y establece la página a ese valor
- */
   const handlePageChange = (e) => {
     document.getElementById("paginas").innerText = ` ${e.target.value}`;
     document.getElementById("unadetantas").innerText = `/${maxPages}`;
     e.target.value ? setPage(e.target.value) : setPage(1);
 
   };
-  // console.log(dogs);
-
   return (
     <div className={styles.padre}>
+      <div className={styles.orderyFilter}> 
+        <Order />
+        <Filter setPage={setPage} />
+        </div>
       <div className={styles.carDog}>
       {
         postByPage.map((e) => {
@@ -84,7 +82,6 @@ export default function Dogs() {
         </button>
         <input
           className={styles.input}
-          id="paginadoNumerico"
           placeholder="Page"
           type="number"
           min="1"
@@ -92,6 +89,7 @@ export default function Dogs() {
           onChange={(e) => handlePageChange(e)}
         />
       </div>
+     
     </div>
   );
 }
