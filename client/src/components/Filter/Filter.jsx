@@ -19,8 +19,9 @@ export default function Filter({setPage}) {
       return e.temperament.includes(valor);
     });
     dispatch(filterTemps(fil));
-    setPage(1);
+    setPage(1)
   };
+
   const onChange = (e) => {
     e.preventDefault();
     let valor = e.target.value;
@@ -36,8 +37,9 @@ export default function Filter({setPage}) {
       }
     });
     dispatch(filterTemps(filtro));
-    setPage(1);
+    setPage(1)
   };
+  
   return (
     <div className={styles.containerFilter}>
       <div>

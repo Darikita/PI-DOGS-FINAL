@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Jua&family=Mali&display=swap');
 
+.padre{
+  margin-top: 1%;
+}
+
 .carDog {
   display: flex;
   flex-wrap: wrap;
@@ -7,69 +11,17 @@
 }
 
 .containerPag {
+  margin-top: 2%;
   font-family: 'jua', cursive;
   margin-bottom: 20px;
   display: flex;
-  flex-wrap: wrap;
-  align-content: stretch;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center; 
+  align-content: flex-end;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.countPag {
-  font-family: 'jua', cursive;
-  color: rgb(70, 69, 69);
-  /* background-color: hsl(340deg 61% 44%); */
-  padding: 7px 14px;
-  border-color: rgb(2, 2, 2);
-  width: 20px;
-  height: 20px;
-  border-radius: 10px;
-  border: 1px solid #979797;
-}
-
-.countPag2{
-  margin-right: 10px;
-  color: rgb(70, 69, 69);
-  /* background-color: hsl(340deg 61% 44%); */
-  padding: 5px 15px;
-  width: 35px;
-  height: 20px;
-  border-radius: 10px;
-  margin-top:-0.5%;
-}
-
-.botonAnterior {
-  min-width: 100px;
-  height: 40px;
-  padding: 5px 10px;
-  cursor: pointer;
-  border-radius: 50px;
-  border: none;
-  background: #ffffff;
-}
-
-.botonAnterior:active {
-  top: 2px;
-}
-
-.botonSiguiente {
-  min-width: 100px;
-  height: 40px;
-  padding: 5px 10px;
-  cursor: pointer;
-  border-radius: 50px;
-  border: none;
-  background: #ffffff;
-  z-index: 1;
-  margin-left: -0.5%;
-  margin-right:0px;
-}
-
-.botonSiguiente:active {
-  top: 2px;
-}
 
 .input {
   width:50px;
@@ -82,18 +34,6 @@
   color: rgb(0, 9, 59);
   background: rgba(255, 255, 255, 1);
   margin: 5px;
-}
-
-.logo {
-  margin-top: -15%;
-  margin-left:-20%;
-  list-style: none;  height: 60px;
-}
-
-.logo2 {
-  margin-top: -15%;
-  list-style: none;
-  height: 60px;
 }
 
 .scanner{

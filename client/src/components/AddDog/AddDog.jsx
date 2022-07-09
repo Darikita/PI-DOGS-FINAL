@@ -61,21 +61,21 @@ export default function AddDog() {
     return errors;
   }
 
-  const handleSelect = (e) => {
-    if(!dog.temperament.includes(e.target.value)){
-    setDog({
-      ...dog,
-      temperament: [...dog.temperament, e.target.value],
-    });
-    setError(
-      validationForm({
-        [e.target.name]: e.target.value,
-      })
-    );
-    } else alert("🚫Can't not repeat temperament!")
-     
-  };
+const handleSelect = (e) => {
+  if(!dog.temperament.includes(e.target.value)){
+  setDog({
+    ...dog,
+    temperament: [...dog.temperament, e.target.value],
+  });
   
+  setError(
+    validationForm({
+      [e.target.name]: e.target.value,
+    })
+  );
+  }else alert("🚫Can't not repeat temperament!")
+};
+
   function onInputChange(e) {
     e.preventDefault();
     setDog({
