@@ -114,4 +114,34 @@ h4 span:nth-child(14){ animation-delay:.65s; }
   transform: translate(0);
  }
 }
+@media (max-width: 550px) {
+  .conteiner {
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-image: url("./Landing1.png"); 
+    background-image:();
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .div {
+    margin-left: 0%;
+    margin-top: -130%;
+    display: flex;
+    flex-direction: column;
+    overflow:hidden;
+    justify-content: center;
+    align-items: center;
+  }
+  .div h4 {
+    font-size:70px;
+    margin-bottom: 35px; 
+    margin-top: 10px;
+     font:bold  'Signika', sans-serif;
+     user-select:none;
+    }
+}
 

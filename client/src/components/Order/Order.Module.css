@@ -56,3 +56,17 @@ select option {
 .selectPeso {
   margin: 10px;
 }
+@media (max-width: 550px) {
+  .containterOrder {
+      font-family: 'Jua', sans-serif;
+      color: #444;
+      display: flex;
+      margin: 10px;
+  }
+  select {
+    font-size: 12px;
+    width: 100px;
+    max-width: 100%;
+
+} 
+} 

@@ -82,3 +82,11 @@
   display: flex;
   justify-content: center;
 }
+@media (max-width: 550px) {
+  .orderyFilter {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+}
+

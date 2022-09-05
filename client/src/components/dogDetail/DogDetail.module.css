@@ -101,3 +101,17 @@
    width: 100%;
   }
  }
+ @media (max-width: 550px) {
+  .imagen {
+    display: flex;  
+    width: 320px;
+    height: 500px;
+    border-radius: 20px;
+    object-fit: cover;
+ }
+ .tt {
+  width: 290px;
+  height:162px;
+  margin-top: -55%;
+}
+}

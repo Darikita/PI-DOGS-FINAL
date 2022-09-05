@@ -37,3 +37,34 @@
   background-color: rgb(145, 142, 139);;
   transform: scale(1.1);
 }
+@media (max-width: 550px) {
+  .nav {
+    margin: 3px 30px 55px 30px;
+    display: inline-block;
+    position: center;
+    height: 40px;
+    padding: 0;
+    margin-left: -4px;
+  }
+  .input {
+    margin-left: 4px;
+    padding: 3px 3px;
+    margin-top: 25px;
+    font-size: 20px;
+    border: none;
+    font: 2.1vw/2.6  'Jua', sans-serif;
+    border-radius: 10px;
+  }
+  .btn {
+    margin-left: 2px;
+    padding: 4px 5px;
+    margin-top:25px;
+
+    background:  #e88078;
+    font-size: 100x;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+  
+  }

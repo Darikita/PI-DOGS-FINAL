@@ -117,4 +117,42 @@
  .navLinks button:hover::before {
   width: 100%;
  }
+ @media (max-width: 550px) {
+  .container {
+    background-size: cover;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 110px;
+}
+  .logo {
+    height: 20px;
+    margin-top: 78px;
+    margin-right: -25px;
+  }
+   
+  .container button {
+    margin-left:-10% ;
+    margin-top: 25px;
+    padding: 4px;
+    border-radius: 20px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+    
+  }
+  .navLinks button {
+
+    padding: 8px 18px;
+    border: unset;
+    margin-right: -5px;
+    z-index: 1;
+    position: relative;
+    font-weight: 1000;
+    font-size: 12px;
+
+   }
+  
+
+ }
  
