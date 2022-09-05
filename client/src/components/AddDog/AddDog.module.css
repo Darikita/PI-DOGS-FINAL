@@ -5,7 +5,7 @@
 }
 
 .container {
-  position: fixed;
+
   background-image:url("../NavBar/fondo\ nav.png");
   display: flex;
   flex-direction: row;
@@ -152,7 +152,7 @@
 }
 
 .form{
-  position: fixed;
+ 
   height: 700px;
 }
 
@@ -255,16 +255,16 @@
 }
 @media (max-width: 550px) {
 .container {
-  position: fixed;
+
   background-image:url("../NavBar/fondo\ nav.png");
   display: flex;
   flex-direction: column;
   font-size: 18px;
-  margin-top: 50px;
+
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=0 );
   box-shadow: 8px 8px 8px 0px rgb(134 134 134 / 78%);
   width: 350px;
-  height:850px;
+  height:1100px;
   margin: 20px;
   padding: 10px;
   border-radius: 20px;
