@@ -10,7 +10,7 @@ export default function DogDetail() {
   let { id } = useParams();
 
   useEffect(() => {
-    axios.get("http://localhost:3001/dogs/" + id).then((response) => {
+    axios.get("/dogs/" + id).then((response) => {
       const data = response.data.map((e) => {
         let temperament = e.temperament;
         if (!temperament && e.temperaments) {

@@ -12,7 +12,7 @@ export const GET_DETAILS_DOG = "GET_DETAILS_DOG"
 export function fetchDogs() {
   return function (dispatch) {
     axios
-      .get("http://localhost:3001/dogs")
+      .get("/dogs")
       .then((dogs) => {
         const data = dogs.data.map((dog) => {
           let temperament = dog.temperament;
@@ -40,7 +40,7 @@ export function fetchDogs() {
 export function fetchTemperaments() {
   return function (dispatch) {
     axios
-      .get("http://localhost:3001/temperaments")
+      .get("/temperaments")
       .then((temperaments) => {
         dispatch({
           type: FETCH_TEMPERAMENTS,
@@ -56,7 +56,7 @@ export function fetchTemperaments() {
 export function searchDogs(name) {
   return function (dispatch) {
     axios
-      .get("http://localhost:3001/dogs?name=" + name)
+      .get("/dogs?name=" + name)
       .then((dogs) => {
         const data = dogs.data.map((dog) => {
           let temperament = dog.temperament;
@@ -83,7 +83,7 @@ export function searchDogs(name) {
 
 export function getDetailsDogs(id){
   return function(dispatch){
-      axios.get("http://localhost:3001/dogs/" + id)
+      axios.get("/dogs/" + id)
       .then((response)=>{
           dispatch({type:GET_DETAILS_DOG, payload: response.data})
       })
@@ -116,7 +116,7 @@ export function filterTemps(temperament) {
 
 export function postDog(payload){
   return async function(dispatch){
-      const respuesta = await axios.post("http://localhost:3001/dogs/new", payload);
+      const respuesta = await axios.post("/dogs/new", payload);
       return dispatch({
           type: POST_DOG,
           payload: respuesta.data
