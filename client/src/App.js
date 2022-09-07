@@ -2,7 +2,7 @@ import "./App.css";
 import Dogs from "./components/Dogs/Dogs";
 import LandingPage from "./components/LandingPage/LandingPage";
 import {Redirect, Switch, Route } from "react-router";
-import DogDetail from "./components/DogDetail/DogDetail.jsx";
+import DogDetail from "./components/dogDetail/dogDetail.jsx";
 import AddDog from "./components/AddDog/AddDog";
 import NavBar from "./components/NavBar/NavBar";
 
